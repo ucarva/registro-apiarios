@@ -33,7 +33,7 @@
                 <div class="text-end">
                     <img src="./img/logo.avif" width="90" />
                 </div>
-                <h2 class="fw-bold text-center py-5">Bienvenido alas abejas</h2>
+                <h2 class="fw-bold text-center py-5">Bienvenidos</h2>
 
                 <!--Mensaje error -->
              
@@ -61,7 +61,7 @@
 
 
                     <div class="mb-4">
-                        <label for="text" class="form-label">Usuario abejorro</label>
+                        <label for="text" class="form-label">Usuario</label>
                         <input type="text" name="Usuario" placeholder="Nombre de usuario" class="form-control">
                     </div>
                     <div class="mb-4">
