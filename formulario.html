@@ -23,7 +23,35 @@
         background: #ffe259;
         background: linear-gradient(to right, hsl(80, 10%, 94%), #ffe259);
       }
+
+      #map {
+        height: 400px;
+        width: 100%;
+      }
     </style>
+
+<!--Ubicacion tiempo real-->
+<title>Obtener Ubicación</title>
+<script>
+window.onload = function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert("Geolocalización no es soportada por este navegador.");
+  }
+}
+
+function showPosition(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  var accuracy = position.coords.accuracy;
+
+  var locationElement = document.getElementById("location");
+  locationElement.innerHTML = "Latitud: " + latitude + "<br>Longitud: " + longitude + "<br>Precisión: " + accuracy + " metros.";
+}
+</script>
+
+
   </head>
 
   <body class="login-layout">
@@ -59,14 +87,14 @@
             </div>
             <div class="mb-4">
               <label for="text" class="form-label">Fecha Instalaciòn</label>
-              <input type="date"
-              id="start"
-              name="trip-start"
-              value="2018-07-22"
-              min="2018-01-01"
-              max="2040-12-31"
-            />
-                
+              <input
+                type="date"
+                id="start"
+                name="trip-start"
+                value="2020-07-22"
+                min="2020-01-01"
+                max="2040-12-31"
+              />
             </div>
             <div class="mb-4">
               <label for="text" class="form-label">Edad de Reina</label>
@@ -77,10 +105,51 @@
                 class="form-control"
               />
             </div>
+  <h2>Ubicación en el Mapa</h2>
+            <div id="map">
+              <iframe class="container w-20"
+                src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d67233.74432444666!2d-73.39777320584164!3d8.201766435372056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x8e677b971d6d1fd1%3A0xf3eeb5f83fb498c9!2sOca%C3%B1a%2C%20Norte%20de%20Santander!3m2!1d8.238693699999999!2d-73.3472901!5e0!3m2!1ses!2sco!4v1708614666410!5m2!1ses!2sco"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>  
+         
+
+            </div>
+            <!--
+            <script>
+              function initMap() {
+                var lugarInstalacion = { lat: 40.7128, lng: -74.006 }; // Coordenadas de ejemplo (Nueva York)
+                var map = new google.maps.Map(document.getElementById("map"), {
+                  zoom: 12,
+                  center: lugarInstalacion,
+                });
+                var marker = new google.maps.Marker({
+                  position: lugarInstalacion,
+                  map: map,
+                });
+              }
+            </script>
+           <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap"async defer></script>-->
+
+
+           <!--Ubicaciòn tiempo real2-->
+          <!-- <div id="map" >
+           <h1>Ubicación Exacta</h1>
+           <div  class="container w-20" id="location"></div>
+          </div>  -->
+            <br />
+            <br />
+            <br />
 
             <!--Boton -->
             <div>
-              <button type="submit" class="btn btn-danger">Enviar</button>
+              
+              <button href="/enviado.html" class="btn btn-primary">Enviar</button>
+              <button  type="submit" class="btn btn-danger">Cerrar Sesiòn</button>
             </div>
           </form>
         </div>

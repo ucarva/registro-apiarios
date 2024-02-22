@@ -51,15 +51,9 @@
                 }
                 ?>
 
-              
-
-
+            
                 <!--Login-->
                 <form action="IniciarSesion.php" method="POST">
-
-
-
-
                     <div class="mb-4">
                         <label for="text" class="form-label">Usuario</label>
                         <input type="text" name="Usuario" placeholder="Nombre de usuario" class="form-control">
@@ -82,5 +76,4 @@
         </div>
     </div>
 </body>
-
 </html>
