@@ -33,7 +33,7 @@
                 $_SESSION['Usuario'] = $row['Usuario'];
                 $_SESSION['Nombre_Completo'] = $row['Nombre_Completo'];
                 $_SESSION['Id'] = $row['Id'];
-                header("Location: formulario.html"); /*./startbootstrap-sb-admin-gh-pages/index.html */
+                header("Location:./startbootstrap-sb-admin-gh-pages/index.html");
                 exit();
             }else {
                 header("Location: Index.php?error=El usuario o la clave son incorrectas");
