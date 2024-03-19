@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Montaña Dorada</title>
+        <title>Inspeccion</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -105,33 +105,73 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Montaña Dorada </h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">colmena 2024</li>
-                        </ol>
-                        <!--Graficos-->
+                        <h1 class="mt-4">Apiarios</h1>
+                        
+                      <!--Formulario de apiario-->
+                      <div class="container-fluid">
                         <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Graficas de ejemplos
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                </div>
+                          <div class="col-12">
+                            <div class="card">
+                              <div class="card-header">
+                                <h3 class="card-title">Control de Apiarios Montaña Dorada</h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                <table id="example2" class="table table-bordered table-hover">
+                                  <thead>
+                                  <tr>
+                                    <th>Nombre apiario</th>
+                                    <th>Ubicación</th>
+                                    <th>Nombre Finca</th>
+                                    <th>Cantidad colmena</th>
+                                    <th>Editar</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                    <td>Apiario1</td>
+                                    <td>Ocaña</td>
+                                    <td>Finca pepito</td>
+                                    <td>6</td>
+                                    <td><button class="btn btn-warning me-md-2" type="button">Ver</button></td>
+                                  </tr>
+                                 
+                                  <tr>
+                                    <td>Apiario2</td>
+                                    <td>Hacari</td>
+                                    <td>Finca los cristales</td>
+                                    <td>8</td>
+                                    <td>
+                                        <button class="btn btn-warning me-md-2" type="button">Ver</button>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Apiario3</td>
+                                    <td>Convencion</td>
+                                    <td>Finca pedro</td>
+                                    <td>4</td>
+                                    <td><button class="btn btn-warning me-md-2" type="button">Ver</button></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Apiario4</td>
+                                    <td>Buena vista</td>
+                                    <td>Finca linda</td>
+                                    <td>12</td>
+                                    <td><button class="btn btn-warning me-md-2" type="button">Ver</button></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Apiario5</td>
+                                    <td>Aguas claras</td>
+                                    <td>Finca la soledad</td>
+                                    <td>9</td>
+                                    <td><button class="btn btn-warning me-md-2" type="button">Ver</button></td>
+                                  </tr>
+                                  </tbody>
+                                  
+                                </table>
+                              </div>
+                              <!-- /.card-body -->
                             </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Tablas del mes
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                        </div>
-
-                       
                      
                 </main>
                 <footer class="py-4 bg-light mt-auto">
