@@ -33,7 +33,8 @@
                 <div class="text-end">
                     <img src="./img/logo.avif" width="90" />
                 </div>
-                <h2 class="fw-bold text-center py-5">Bienvenidos</h2>
+                <h2 class="fw-bold text-center ">MONTAÑA DORADA</h2>
+                <h3  class="fw-normal text-center" >Bienvenidos</h3>
 
                 <!--Mensaje error -->
              
