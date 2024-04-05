@@ -63,7 +63,7 @@
             <div class="collapse" id="collapsePagesApiario" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                 <a class="nav-link" href="./registroapiario.html">Registrar</a>
-                <a class="nav-link" href="#">Consultar</a>
+                <a class="nav-link" href="./consultaapiario.php">Consultar</a>
                 <a class="nav-link" href="#">Modificar</a>
                 <a class="nav-link" href="#">Eliminar</a>
               </nav>
