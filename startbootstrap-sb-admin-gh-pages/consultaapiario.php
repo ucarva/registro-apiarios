@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Montaña Dorada</title>
+    <title>Consulta-Apiarios</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -65,7 +65,7 @@
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link" href="./registroapiario.php">Registrar</a>
-                                <a class="nav-link" href="./consultaapiario.php">Consultar</a>
+                                <a class="nav-link" href="#">Consultar</a>
                                 <a class="nav-link" href="#">Modificar</a>
                                 <a class="nav-link" href="#">Eliminar</a>
                             </nav>
@@ -123,39 +123,72 @@
                 </div>
             </nav>
         </div>
+
+
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Montaña Dorada </h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">colmena 2024</li>
-                    </ol>
-                    <!--Graficos-->
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-area me-1"></i>
-                                    Graficas de ejemplos
+                    <h1 class="mt-4">Apiarios</h1>
+
+                    <!--Formulario de apiario-->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Control de Apiarios Montaña Dorada</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <table id="tablaapiarios" class="table table-bordered table-hover">
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <th>Nombre apiario</th>
+                                                    <th>Ubicación</th>
+                                                    <th>Nombre Finca</th>
+                                                    <th>Nombre Granjero</th>
+                                                    <th>Telefono Granjero</th>
+                                                    <th>Fecha instalación</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                        <?php
+                                            // Incluye el archivo de conexión
+                                            include 'consulapiario.php';
+
+                                            // Query para seleccionar todos los datos de la tabla apiarios
+                                            $sql = "SELECT * FROM apiarios";
+                                            $result = $conn->query($sql);
+
+                                            if ($result->num_rows > 0) {
+                                                // Muestra los datos de cada fila
+                                                while($row = $result->fetch_assoc()) {
+                                                    echo "<tr>";
+                                                    
+                                                    echo "<td >" . $row["nombre"] . "</td>";
+                                                    echo "<td>" . $row["lugar"] . "</td>";
+                                                    echo "<td>" . $row["finca"] . "</td>";
+                                                    echo "<td>" . $row["granjero"] . "</td>";
+                                                    echo "<td>" . $row["telefono"] . "</td>";
+                                                    echo "<td>" . $row["fecha"] . "</td>";
+                                                    // Añade más celdas según la estructura de tu tabla apiarios
+                                                    echo "</tr>";
+                                                }
+                                            } else {
+                                                echo "0 resultados";
+                                            }
+                                            // Cierra la conexión
+                                            $conn->close();
+                                            ?>
+                                          
+                                     
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                    <!-- /.card-body -->
                                 </div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    Tablas del mes
-                                </div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    
 
             </main>
             <footer class="py-4 bg-light mt-auto">
@@ -181,6 +214,7 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
         crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
-</body>
+</body>      
+
 
 </html>
