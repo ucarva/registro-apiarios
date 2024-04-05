@@ -19,22 +19,18 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="index.html">Montaña Dorada</a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-                class="fas fa-bars"></i></button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
-                    aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
-                        class="fas fa-search"></i></button>
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-warning" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
             </div>
         </form>
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">Ajustes</a></li>
                     <li><a class="dropdown-item" href="#!">Registro actividades</a></li>
@@ -55,14 +51,12 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Inicio
                         </a>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapsePagesApiario" aria-expanded="false" aria-controls="collapsePages">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePagesApiario" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Apiarios
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapsePagesApiario" aria-labelledby="headingTwo"
-                            data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="collapsePagesApiario" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link" href="./registroapiario.php">Registrar</a>
                                 <a class="nav-link" href="#">Consultar</a>
@@ -70,14 +64,12 @@
                                 <a class="nav-link" href="#">Eliminar</a>
                             </nav>
                         </div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
-                            aria-expanded="false" aria-controls="collapsePages">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Actividades
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
-                            data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link" href="../startbootstrap-sb-admin-gh-pages/inspeccion.html">Nueva
                                     inspección</a>
@@ -90,14 +82,12 @@
                             </nav>
                         </div>
                         <!--Administración-->
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapsePagesadmin" aria-expanded="false" aria-controls="collapsePages">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePagesadmin" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             Administracion
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapsePagesadmin" aria-labelledby="headingTwo"
-                            data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="collapsePagesadmin" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link" href="./registrousuario.html">Crear usuarios</a>
 
@@ -152,37 +142,37 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <!-- Codigo de consulta registros bdd-->
+                                                <?php
+                                                // Incluye el archivo de conexión
+                                                include 'consulapiario.php';
 
-                                        <?php
-                                            // Incluye el archivo de conexión
-                                            include 'consulapiario.php';
+                                                // Query para seleccionar todos los datos de la tabla apiarios
+                                                $sql = "SELECT * FROM apiarios";
+                                                $result = $conn->query($sql);
 
-                                            // Query para seleccionar todos los datos de la tabla apiarios
-                                            $sql = "SELECT * FROM apiarios";
-                                            $result = $conn->query($sql);
+                                                if ($result->num_rows > 0) {
+                                                    // Muestra los datos de cada fila
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        echo "<tr>";
 
-                                            if ($result->num_rows > 0) {
-                                                // Muestra los datos de cada fila
-                                                while($row = $result->fetch_assoc()) {
-                                                    echo "<tr>";
-                                                    
-                                                    echo "<td >" . $row["nombre"] . "</td>";
-                                                    echo "<td>" . $row["lugar"] . "</td>";
-                                                    echo "<td>" . $row["finca"] . "</td>";
-                                                    echo "<td>" . $row["granjero"] . "</td>";
-                                                    echo "<td>" . $row["telefono"] . "</td>";
-                                                    echo "<td>" . $row["fecha"] . "</td>";
-                                                    // Añade más celdas según la estructura de tu tabla apiarios
-                                                    echo "</tr>";
+                                                        echo "<td >" . $row["nombre"] . "</td>";
+                                                        echo "<td>" . $row["lugar"] . "</td>";
+                                                        echo "<td>" . $row["finca"] . "</td>";
+                                                        echo "<td>" . $row["granjero"] . "</td>";
+                                                        echo "<td>" . $row["telefono"] . "</td>";
+                                                        echo "<td>" . $row["fecha"] . "</td>";
+                                                        // Añade más celdas según la estructura de tu tabla apiarios
+                                                        echo "</tr>";
+                                                    }
+                                                } else {
+                                                    echo "0 resultados";
                                                 }
-                                            } else {
-                                                echo "0 resultados";
-                                            }
-                                            // Cierra la conexión
-                                            $conn->close();
-                                            ?>
-                                          
-                                     
+                                                // Cierra la conexión
+                                                $conn->close();
+                                                ?>
+
+
                                             </tbody>
 
                                         </table>
@@ -205,16 +195,14 @@
             </footer>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/chart-area-demo.js"></script>
     <script src="assets/demo/chart-bar-demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
-</body>      
+</body>
 
 
 </html>
