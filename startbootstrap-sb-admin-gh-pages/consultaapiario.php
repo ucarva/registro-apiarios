@@ -141,19 +141,69 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        
+
                                                         <!--Formulario de registro-->
-                                                        
+                                                        <div class="container ">
 
 
+                                                            <form action="consulapiario.php" method="post">
+                                                                <div class="mb-3">
+                                                                    <label for="nombre" class="form-label">Apiario:</label>
+                                                                    <!-- Lista desplegable que será llenada con nombres desde PHP -->
+
+
+                                                                    <select class="form-select" name="nombre" id="nombre" required>
+
+
+                                                                        <!--llamado desde php-->
+                                                                        <?php
+                                                                        // Incluye el archivo de conexión
+                                                                        include 'consulapiario.php';
+
+                                                                        // Query para seleccionar todos los datos de la tabla apiarios
+                                                                        $sql = "SELECT * FROM apiarios";
+                                                                        $result = $conn->query($sql);
+
+                                                                        if ($result->num_rows > 0) {
+                                                                            // Muestra los datos de cada fila
+                                                                            while ($row = $result->fetch_assoc()) {
+                                                                                /*llamamos el id y el nombre de la BDD */
+                                                                                echo "  <option value=" . $row["id"] . ">" . $row["nombre"] . "</option>";
+                                                                            }
+                                                                        } else {
+                                                                            echo "0 resultados";
+                                                                        }
+                                                                        // Cierra la conexión
+                                                                        $conn->close();
+
+                                                                        ?>
+
+                                                                        <!-- fin llamado desde php-->
+
+
+
+
+                                                                    </select>
+                                                                </div>
+
+
+                                                            </form>
+                                                        </div>
+
+
+
+
+
+                                                        <!-- fin Formulario de registro-->
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                                                         <button type="button" class="btn btn-primary">Guardar</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!--fin modal-->
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
