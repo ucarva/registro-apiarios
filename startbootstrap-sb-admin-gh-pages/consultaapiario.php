@@ -126,7 +126,34 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">Control de Apiarios Montaña Dorada</h3>
+                                        <!--Modal -->
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Agregar colmena
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Registro Colmena</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        
+                                                        <!--Formulario de registro-->
+                                                        
+
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Guardar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
@@ -139,6 +166,7 @@
                                                     <th>Nombre Granjero</th>
                                                     <th>Telefono Granjero</th>
                                                     <th>Fecha instalación</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -162,6 +190,8 @@
                                                         echo "<td>" . $row["granjero"] . "</td>";
                                                         echo "<td>" . $row["telefono"] . "</td>";
                                                         echo "<td>" . $row["fecha"] . "</td>";
+                                                        echo "<td>" . "</td>";
+
                                                         // Añade más celdas según la estructura de tu tabla apiarios
                                                         echo "</tr>";
                                                     }
@@ -170,8 +200,8 @@
                                                 }
                                                 // Cierra la conexión
                                                 $conn->close();
-                                                ?>
 
+                                                ?>
 
                                             </tbody>
 

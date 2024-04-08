@@ -141,7 +141,7 @@
                       <div class="row mb-20">
                         <div class="mb-4">
                           <div class="form-floating mb-3 mb-md-0">
-                            <input type="text" name="nombre" class="form-control" id="inputFirstName" placeholder="nombre" />
+                            <input type="text" name="nombre" class="form-control  " id="inputFirstName" placeholder="nombre" />
                             <label for="inputFirstName">Nombre Apiario</label>
                           </div>
                         </div>
