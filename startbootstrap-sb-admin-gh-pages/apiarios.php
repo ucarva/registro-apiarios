@@ -127,7 +127,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Apiarios</h1>
+                    <h1 class="mt-4 text-center">APIARIOS Y COLMENAS REGISTRADAS</h1>
 
                     <!--Formulario de apiario-->
                     <div class="container-fluid">
@@ -140,7 +140,7 @@
                                         <table id="tablaapiarios" class="table table-bordered table-hover">
                                             <thead class="text-center">
                                                 <tr>
-                                                    <th>Id apiario</th>
+                                                    <th>Nombre apiario</th>
                                                     <th>Colmena</th>
                                                     <th>Camara de Cria</th>
                                                     <th>Alzas melíferas</th>
@@ -160,7 +160,7 @@
                                                 include 'consulapiario.php';
 
                                                 // Query para seleccionar todos los datos de la tabla apiarios
-                                                $sql = "SELECT * FROM colmenas";
+                                                $sql = "SELECT * FROM colmenas,apiarios WHERE apiarios.id=colmenas.apiario_id AND colmenas.apiario_id;";
                                                 $result = $conn->query($sql);
 
                                                 if ($result->num_rows > 0) {
@@ -168,7 +168,7 @@
                                                     while ($row = $result->fetch_assoc()) {
                                                         echo "<tr>";
 
-                                                        echo "<td class='text-center'>" . $row["apiario_id"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["nombre"] . "</td>";
                                                         echo "<td class='text-center'>" . $row["colmena"] . "</td>";
                                                         echo "<td class='text-center'>" . $row["cria"] . "</td>";
                                                         echo "<td class='text-center'>" . $row["alzas"] . "</td>";

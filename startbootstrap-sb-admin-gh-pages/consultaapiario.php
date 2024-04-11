@@ -130,7 +130,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Apiarios</h1>
+                    <h1 class="mt-4 text-center">APIARIOS</h1>
 
                     <!--Formulario de apiario-->
                     <div class="container-fluid">
@@ -140,30 +140,29 @@
                                     <div class="card-header">
                                         <!--Modal -->
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            Agregar colmena
-                                        </button>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        
+                                        <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#RegistroColmena'>
+                                                                Agregar colmena
+                                                            </button>
+                                        <!-- Modal para colmenas -->
+                                        <div class="modal fade" id="RegistroColmena" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel">Registro Colmena</h5>
 
                                                     </div>
-                                                    <div class="modal-body">
-                                                   
-                                                     
-                                                        
+                                                    <div class="modal-body">                                                   
                                                         <!--Formulario de registro-->
                                                         <div class="container">
                                                         
                                                             <form action="equipamiento.php" method="post">
                                                                 <div class="mb-3">
-                                                                    <label for="apiario" class="form-label">Apiario:</label>
+                                                                  
+                                                            <!--lista despegable-->
+                                                            <label for="apiario" class="form-label">Apiario:</label>
                                                                     <!-- Lista desplegable que será llenada con nombres desde PHP -->
-                                                                    <select class="form-select" name="apiario_id" id="" required>
+                                                                    <select class="form-select" name="apiario_id" id="apiario_id" required>
                                                                         <!--llamado desde php-->
                                                                         <?php
                                                                         // Incluye el archivo de conexión
@@ -189,8 +188,6 @@
                                                                     </select>
                                                                     <!--fin de la selección lista despegable-->
                                                                     <!--inicio de items formulario-->
-
-
 
                                                                     <div class="col-12">
                                                                         <label for="inputState" class="form-label">Tipo de colmena:</label>
@@ -224,7 +221,6 @@
                                                                             <option selected>5</option>
                                                                         </select>
                                                                     </div>
-
                                                                     <div class="col-12">
                                                                         <label for="inputState" class="form-label">Medias alzas melíferas:</label>
                                                                         <select id="inputState" name="medias" class="form-select">
@@ -235,7 +231,6 @@
                                                                             <option selected>5</option>
                                                                         </select>
                                                                     </div>
-
                                                                     <div class="col-12">
                                                                         <label for="inputState" class="form-label">Alimentador:</label>
                                                                         <select id="inputState" name="alimentador" class="form-select">
@@ -243,7 +238,6 @@
                                                                             <option selected>No</option>
                                                                         </select>
                                                                     </div>
-
                                                                     <div class="col-12">
                                                                         <label for="inputState" class="form-label">Trampa de polen:</label>
                                                                         <select id="inputState" name="polen" class="form-select">
@@ -251,7 +245,6 @@
                                                                             <option selected>No</option>
                                                                         </select>
                                                                     </div>
-
                                                                     <div class="col-12">
                                                                         <label for="inputState" class="form-label">Trampa para propóleo:</label>
                                                                         <select id="inputState" name="propoleo" class="form-select">
@@ -259,7 +252,6 @@
                                                                             <option selected>No</option>
                                                                         </select>
                                                                     </div>
-
                                                                     <div class="col-12">
                                                                         <label for="inputState" class="form-label">Jaula para abejas reinas:</label>
                                                                         <select id="inputState" name="reinas" class="form-select">
@@ -267,7 +259,6 @@
                                                                             <option selected>No</option>
                                                                         </select>
                                                                     </div>
-
                                                                     <div class="col-12">
                                                                         <label for="inputState" class="form-label">Rejilla excluidora:</label>
                                                                         <select id="inputState" name="excluidora" class="form-select">
@@ -275,7 +266,6 @@
                                                                             <option selected>No</option>
                                                                         </select>
                                                                     </div>
-
                                                                     <div class="col-12">
                                                                         <label for="inputState" class="form-label">Anchura de la piquera:</label>
                                                                         <select id="inputState" name="piquera" class="form-select">
@@ -291,20 +281,16 @@
                                                                             <option selected>10</option>
                                                                         </select>
                                                                     </div>
-
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                                                                     <input class="btn btn-primary" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
                                                                 </div>
-
-
                                                             </form>
                                                             <!-- fin Formulario de registro-->
                                                         </div>
                                                         <!-- Fin contaider de formulario-->
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -315,13 +301,13 @@
                                         <table id="tablaapiarios" class="table table-bordered table-hover">
                                             <thead class="text-center">
                                                 <tr>
-                                                    <th>Nombre apiario</th>
+                                                    <th id="Nombreapiario">Nombre apiario</th>
                                                     <th>Ubicación</th>
                                                     <th>Nombre Finca</th>
                                                     <th>Nombre Granjero</th>
                                                     <th>Telefono Granjero</th>
                                                     <th>Fecha instalación</th>
-                                                    <th></th>
+                                                   
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -345,7 +331,8 @@
                                                         echo "<td>" . $row["granjero"] . "</td>";
                                                         echo "<td>" . $row["telefono"] . "</td>";
                                                         echo "<td>" . $row["fecha"] . "</td>";
-                                                        echo "<td>" . "</td>";
+                                                        
+
 
                                                         // Añade más celdas según la estructura de tu tabla apiarios
                                                         echo "</tr>";
