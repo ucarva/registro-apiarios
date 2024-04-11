@@ -10,9 +10,21 @@
     <title>Consulta-Apiarios</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    
+    
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-
+<!-- Codigo Js para mensaje enviar -->
+<script>
+    function confirmacion (){
+        var respuesta=confirm("¿La información es correcta?");
+        if(respuesta==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -138,23 +150,20 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel">Registro Colmena</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                                                     </div>
                                                     <div class="modal-body">
-
+                                                   
+                                                        <!--<h2 class="succes" ></h2>-->
+                                                        
                                                         <!--Formulario de registro-->
-                                                        <div class="container ">
-
-
-                                                            <form action="consulapiario.php" method="post">
+                                                        <div class="container">
+                                                        
+                                                            <form action="equipamiento.php" method="post">
                                                                 <div class="mb-3">
-                                                                    <label for="nombre" class="form-label">Apiario:</label>
+                                                                    <label for="apiario" class="form-label">Apiario:</label>
                                                                     <!-- Lista desplegable que será llenada con nombres desde PHP -->
-
-
-                                                                    <select class="form-select" name="nombre" id="nombre" required>
-
-
+                                                                    <select class="form-select" name="apiario_id" id="" required>
                                                                         <!--llamado desde php-->
                                                                         <?php
                                                                         // Incluye el archivo de conexión
@@ -168,38 +177,181 @@
                                                                             // Muestra los datos de cada fila
                                                                             while ($row = $result->fetch_assoc()) {
                                                                                 /*llamamos el id y el nombre de la BDD */
-                                                                                echo "  <option value=" . $row["id"] . ">" . $row["nombre"] . "</option>";
+                                                                                echo "  <option  name='nombre' value=" . $row["id"] . ">"  . $row["nombre"] . "</option>";
                                                                             }
                                                                         } else {
                                                                             echo "0 resultados";
                                                                         }
                                                                         // Cierra la conexión
                                                                         $conn->close();
-
                                                                         ?>
-
                                                                         <!-- fin llamado desde php-->
-
-
-
-
                                                                     </select>
+                                                                    <!--fin de la selección lista despegable-->
+                                                                    <!--inicio de items formulario-->
+
+
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Tipo de colmena:</label>
+                                                                        <select id="inputState" name="colmena" class="form-select">
+                                                                            <option selected>Colmena Vertical</option>
+                                                                            <option selected>Camara de cría</option>
+                                                                            <option selected>Núcleo</option>
+                                                                            <option selected>Otra</option>
+
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Cámara de cría:</label>
+                                                                        <select id="inputState" name="cria" class="form-select">
+                                                                            <option selected>1</option>
+                                                                            <option selected>2</option>
+                                                                            <option selected>3</option>
+                                                                            <option selected>4</option>
+                                                                            <option selected>5</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Alzas melíferas:</label>
+                                                                        <select id="inputState" name="alzas" class="form-select">
+                                                                            <option selected>1</option>
+                                                                            <option selected>2</option>
+                                                                            <option selected>3</option>
+                                                                            <option selected>4</option>
+                                                                            <option selected>5</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Medias alzas melíferas:</label>
+                                                                        <select id="inputState" name="medias" class="form-select">
+                                                                            <option selected>1</option>
+                                                                            <option selected>2</option>
+                                                                            <option selected>3</option>
+                                                                            <option selected>4</option>
+                                                                            <option selected>5</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Alimentador:</label>
+                                                                        <select id="inputState" name="alimentador" class="form-select">
+                                                                            <option selected>Si</option>
+                                                                            <option selected>No</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Trampa de polen:</label>
+                                                                        <select id="inputState" name="polen" class="form-select">
+                                                                            <option selected>Si</option>
+                                                                            <option selected>No</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Trampa para propóleo:</label>
+                                                                        <select id="inputState" name="propoleo" class="form-select">
+                                                                            <option selected>Si</option>
+                                                                            <option selected>No</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Jaula para abejas reinas:</label>
+                                                                        <select id="inputState" name="reinas" class="form-select">
+                                                                            <option selected>Si</option>
+                                                                            <option selected>No</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Rejilla excluidora:</label>
+                                                                        <select id="inputState" name="excluidora" class="form-select">
+                                                                            <option selected>Si</option>
+                                                                            <option selected>No</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <label for="inputState" class="form-label">Anchura de la piquera:</label>
+                                                                        <select id="inputState" name="piquera" class="form-select">
+                                                                            <option selected>1</option>
+                                                                            <option selected>2</option>
+                                                                            <option selected>3</option>
+                                                                            <option selected>4</option>
+                                                                            <option selected>5</option>
+                                                                            <option selected>6</option>
+                                                                            <option selected>7</option>
+                                                                            <option selected>8</option>
+                                                                            <option selected>9</option>
+                                                                            <option selected>10</option>
+                                                                        </select>
+                                                                    </div>
+
+
+
+
+
+
+
+                                                                    <!-- Resto de formulario
+                                                                        <div class="col-12">
+                                                                            <label for="inputEmail4" class="form-label">Email</label>
+                                                                            <input type="email" class="form-control" id="inputEmail4">
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <label for="inputPassword4" class="form-label">Contraseña</label>
+                                                                            <input type="password" class="form-control" id="inputPassword4">
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <label for="inputAddress" class="form-label">Dirección</label>
+                                                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <label for="inputAddress2" class="form-label">Dirección 2</label>
+                                                                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <label for="inputCity" class="form-label">Ciudad</label>
+                                                                            <input type="text" class="form-control" id="inputCity">
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-12">
+                                                                            <label for="inputZip" class="form-label">Código postal</label>
+                                                                            <input type="text" class="form-control" id="inputZip">
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                                                <label class="form-check-label" for="gridCheck">
+                                                                                    Verifícame
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                                                                        </div>
+                                                                    -->
+
+
+
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                                                    <input class="btn btn-primary" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
                                                                 </div>
 
 
                                                             </form>
+                                                            <!-- fin Formulario de registro-->
                                                         </div>
-
-
-
-
-
-                                                        <!-- fin Formulario de registro-->
+                                                        <!-- Fin contaider de formulario-->
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                                                        <button type="button" class="btn btn-primary">Guardar</button>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
