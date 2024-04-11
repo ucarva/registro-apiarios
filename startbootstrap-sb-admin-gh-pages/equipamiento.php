@@ -40,10 +40,15 @@ $resultado = mysqli_query($conexion,$inserte);
 
 
                    if($resultado){
+                    // Redirigir al usuario a una nueva página después de procesar el formulario
+                        header("Location:apiarios.html");
+                        exit(); // Asegúrate de que el script se detenga después de redirigir
                         ?>
+                    <script >
+                        alert("Colmena regisrada")
+                    </script>
                     
-                      <h2 class="succes">Colmena regisrada</h2>
-                                                               
+                                                          
                         <?php
 
                     }else{

@@ -154,7 +154,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                    
-                                                        <!--<h2 class="succes" ></h2>-->
+                                                        <h2 class="succes" ></h2>
                                                         
                                                         <!--Formulario de registro-->
                                                         <div class="container">
@@ -291,54 +291,6 @@
                                                                             <option selected>10</option>
                                                                         </select>
                                                                     </div>
-
-
-
-
-
-
-
-                                                                    <!-- Resto de formulario
-                                                                        <div class="col-12">
-                                                                            <label for="inputEmail4" class="form-label">Email</label>
-                                                                            <input type="email" class="form-control" id="inputEmail4">
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <label for="inputPassword4" class="form-label">Contraseña</label>
-                                                                            <input type="password" class="form-control" id="inputPassword4">
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <label for="inputAddress" class="form-label">Dirección</label>
-                                                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <label for="inputAddress2" class="form-label">Dirección 2</label>
-                                                                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <label for="inputCity" class="form-label">Ciudad</label>
-                                                                            <input type="text" class="form-control" id="inputCity">
-                                                                        </div>
-                                                                        
-                                                                        <div class="col-12">
-                                                                            <label for="inputZip" class="form-label">Código postal</label>
-                                                                            <input type="text" class="form-control" id="inputZip">
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                                                <label class="form-check-label" for="gridCheck">
-                                                                                    Verifícame
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12">
-                                                                            <button type="submit" class="btn btn-primary">Ingresar</button>
-                                                                        </div>
-                                                                    -->
-
-
-
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
