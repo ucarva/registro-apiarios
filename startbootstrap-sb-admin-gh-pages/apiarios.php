@@ -142,17 +142,15 @@
                                                 <tr>
                                                     <th>Id apiario</th>
                                                     <th>Colmena</th>
-                                                    <th>Cria</th>
-                                                    <th>Alzas</th>
-                                                    <th>Medias</th>
+                                                    <th>Camara de Cria</th>
+                                                    <th>Alzas melíferas</th>
+                                                    <th>Medias alzas melíferas</th>
                                                     <th>Alimentador</th>
-                                                    <th>Polen</th>
-                                                    <th>Propoleo</th>
-                                                    <th>Reinas</th>
-                                                    <th>Excluidora</th>
-                                                    <th>Piquera</th>
-                                                    
-                                                   
+                                                    <th>Trampa de polen</th>
+                                                    <th>Trampa para propoleo</th>
+                                                    <th>Jaula para abejas reinas</th>
+                                                    <th>Rejilla excluidora</th>
+                                                    <th>Anchura de la piquera</th>                                                 
                                                 </tr>
                                             </thead>
                                             <tbody>
