@@ -140,17 +140,56 @@
                                         <table id="tablaapiarios" class="table table-bordered table-hover">
                                             <thead class="text-center">
                                                 <tr>
-                                                    <th>Nombre apiario</th>
-                                                    <th>Ubicación</th>
-                                                    <th>Nombre Finca</th>
-                                                    <th>Nombre Granjero</th>
-                                                    <th>Telefono Granjero</th>
-                                                    <th>Fecha instalación</th>
-                                                    <th></th>
+                                                    <th>Id apiario</th>
+                                                    <th>Colmena</th>
+                                                    <th>Cria</th>
+                                                    <th>Alzas</th>
+                                                    <th>Medias</th>
+                                                    <th>Alimentador</th>
+                                                    <th>Polen</th>
+                                                    <th>Propoleo</th>
+                                                    <th>Reinas</th>
+                                                    <th>Excluidora</th>
+                                                    <th>Piquera</th>
+                                                    
+                                                   
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                               
+                                                <!-- Codigo de consulta registros bdd-->
+                                                <?php
+                                                // Incluye el archivo de conexión
+                                                include 'consulapiario.php';
+
+                                                // Query para seleccionar todos los datos de la tabla apiarios
+                                                $sql = "SELECT * FROM colmenas";
+                                                $result = $conn->query($sql);
+
+                                                if ($result->num_rows > 0) {
+                                                    // Muestra los datos de cada fila
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        echo "<tr>";
+
+                                                        echo "<td class='text-center'>" . $row["apiario_id"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["colmena"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["cria"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["alzas"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["medias"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["alimentador"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["polen"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["propoleo"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["reinas"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["excluidora"] . "</td>";
+                                                        echo "<td class='text-center'>" . $row["piquera"] . "</td>";
+                                                        
+                                                    }
+                                                } else {
+                                                    echo "0 resultados";
+                                                }
+                                                // Cierra la conexión
+                                                $conn->close();
+
+                                                ?>
 
                                             </tbody>
 

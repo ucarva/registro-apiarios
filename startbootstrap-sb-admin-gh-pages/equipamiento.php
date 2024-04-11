@@ -41,7 +41,7 @@ $resultado = mysqli_query($conexion,$inserte);
 
                    if($resultado){
                     // Redirigir al usuario a una nueva página después de procesar el formulario
-                        header("Location:apiarios.html");
+                        header("Location:apiarios.php");
                         exit(); // Asegúrate de que el script se detenga después de redirigir
                         ?>
                     <script >
