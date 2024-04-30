@@ -33,7 +33,7 @@
 
                    if($resultado){
                     // Redirigir al usuario a una nueva página después de procesar el formulario
-                        header("Location:index.html");
+                        header("Location:consultaapiario.php");
                         exit(); // Asegúrate de que el script se detenga después de redirigir
                         ?>
                     <script >

@@ -7,14 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Consulta-Apiarios</title>
+    <title>Montaña Dorada</title>
+    <link rel="stylesheet" href="/startbootstrap-sb-admin-gh-pages/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-    
-    
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-<!-- Codigo Js para mensaje enviar -->
 <script>
     function confirmacion (){
         var respuesta=confirm("¿La información es correcta?");
@@ -71,7 +69,8 @@
                         <div class="collapse" id="collapsePagesApiario" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link" href="./registroapiario.php">Registrar</a>
-                                <a class="nav-link" href="#">Consultar</a>
+                                <a class="nav-link" href="./consultaapiario.php">Consultar</a>
+                                <a class="nav-link" href="./consulcolmena.php">Consultar</a>
                                 <a class="nav-link" href="#">Modificar</a>
                                 <a class="nav-link" href="#">Eliminar</a>
                             </nav>
@@ -125,70 +124,133 @@
                 </div>
             </nav>
         </div>
-
-
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
-                    <h1 class="mt-4 text-center">APIARIOS & COLMENA</h1>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header">
 
-                    <!--Formulario de apiario-->
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        
-                                    <div class="card-body">
-                                        <table id="tablaapiarios" class="table table-bordered table-hover">
-                                            <thead class="text-center">
-                                                <tr>
-                                                    <th>Nombre apiario</th>
-                                                    <th>Colmena</th>
-                                                    <th>Inspección</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <!-- Codigo de consulta registros bdd-->
-                                                <?php
-                                                            // Incluye el archivo de conexión
-                                                            include 'consulapiario.php';
-                                                            $apiario_id=$_GET['apiario_id'];
-                                                                
-                                                                $sql = "SELECT apiarios.nombre, colmenas.id, colmenas.tipo  FROM colmenas,apiarios where apiarios.id=colmenas.apiario_id AND apiario_id=$apiario_id";
-                                                                $result = $conn->query($sql);
-                                                                        
+                                    <!--Formulario-->
+                                    <div class="container">
+                                                        
+                                                        <form action="equipamiento.php" method="post">
+                                                            <div class="mb-3">
+                                                              
 
-                                                                        if ($result->num_rows > 0) {
-                                                                            // Muestra los datos de cada fila
-                                                                            while ($row = $result->fetch_assoc()) {
-                                                                                echo "<tr>";
-                        
-                                                                                echo "<td class='text-center'>" . $row["nombre"] . "</td>";
-                                                                                echo "<td class='text-center'>" . $row["tipo"] . "</td>";
+                                    <h3 class="text-center font-weight-light my-4 ">
+                                        Equipamiento Colmena
+                                    </h3>
+                                 
 
-                                                                               /* echo "  <option  name='nombre' value=" . $row["id"] . ">"  . $row["nombre"] . "</option>";*/
-
-                                                                                echo "<td> <form action='inspeccion.php' method='get'><div class='d-grid gap-2 col-6  mx-auto'><button  type='submit' class='btn btn-warning'><a href='inspeccion.php' >Inspección</a></button></td></div>
-                                                                                <input type='hidden' name='apiario_id' value=". $row["id"] . " />
-                                                                                </form></td>";
-                                                                                echo "</tr>";
-                                                                                
-                                                                            }
-                                                                        } else {
-                                                                            echo "0 resultados";
-                                                                        }
-                                                                        // Cierra la conexión
-                                                                        $conn->close();
-                                                ?>
-
-                                            </tbody>
-
-                                        </table>
+                                    <div class="col-12">
+                                        <label for="inputState" class="form-label">Cámara de cría:</label>
+                                        <select id="inputState" name="cria" class="form-select">
+                                            <option selected>1</option>
+                                            <option selected>2</option>
+                                            <option selected>3</option>
+                                            <option selected>4</option>
+                                            <option selected>5</option>
+                                        </select>
                                     </div>
-                                    <!-- /.card-body -->
-                                </div>
 
+                                    <div class="col-12">
+                                        <label for="inputState" class="form-label">Alzas melíferas:</label>
+                                        <select id="inputState" name="alzas" class="form-select">
+                                            <option selected>1</option>
+                                            <option selected>2</option>
+                                            <option selected>3</option>
+                                            <option selected>4</option>
+                                            <option selected>5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputState" class="form-label">Medias alzas melíferas:</label>
+                                        <select id="inputState" name="medias" class="form-select">
+                                            <option selected>1</option>
+                                            <option selected>2</option>
+                                            <option selected>3</option>
+                                            <option selected>4</option>
+                                            <option selected>5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputState" class="form-label">Alimentador:</label>
+                                        <select id="inputState" name="alimentador" class="form-select">
+                                            <option selected>Si</option>
+                                            <option selected>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputState" class="form-label">Trampa de polen:</label>
+                                        <select id="inputState" name="polen" class="form-select">
+                                            <option selected>Si</option>
+                                            <option selected>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputState" class="form-label">Trampa para propóleo:</label>
+                                        <select id="inputState" name="propoleo" class="form-select">
+                                            <option selected>Si</option>
+                                            <option selected>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputState" class="form-label">Jaula para abejas reinas:</label>
+                                        <select id="inputState" name="reinas" class="form-select">
+                                            <option selected>Si</option>
+                                            <option selected>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputState" class="form-label">Rejilla excluidora:</label>
+                                        <select id="inputState" name="excluidora" class="form-select">
+                                            <option selected>Si</option>
+                                            <option selected>No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputState" class="form-label">Anchura de la piquera:</label>
+                                        <select id="inputState" name="piquera" class="form-select">
+                                            <option selected>1</option>
+                                            <option selected>2</option>
+                                            <option selected>3</option>
+                                            <option selected>4</option>
+                                            <option selected>5</option>
+                                            <option selected>6</option>
+                                            <option selected>7</option>
+                                            <option selected>8</option>
+                                            <option selected>9</option>
+                                            <option selected>10</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                        <input class="btn btn-primary" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
+                                    </div>
+                                
+                                </form>
+                                                            <!-- fin Formulario de registro-->
+                                                        </div>
+                                                        <!-- Fin contaider de formulario-->
+                                                    </div>
+
+                                <?php
+                                include("equipamiento.php");
+                                ?>
+                                <h2></h2>
+
+
+
+
+
+
+
+
+                            </div>
+
+                        </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
@@ -212,6 +274,5 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
 </body>
-
 
 </html>

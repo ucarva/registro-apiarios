@@ -3,8 +3,8 @@
     if(isset($_POST['colmodal'])){
 
             if(
-                strlen ($_POST['apiario_id']) >=1 &&
-                strlen ($_POST['colmena']) >=1 &&
+                strlen ($_POST['colmena_id']) >=1 &&
+                
                 strlen ($_POST['cria']) >=1 &&
                 strlen ($_POST['alzas']) >=1 &&
                 strlen ($_POST['medias']) >=1 &&
@@ -18,8 +18,7 @@
             
             ){
 
-                $apiario = trim($_POST['apiario_id']);
-                $tipoColmena = trim($_POST['colmena']);
+                $colmenaid = trim($_POST['colmena_id']); 
                 $camaraCria = trim($_POST['cria']);
                 $alzasMeliferas = trim($_POST['alzas']);
                 $mediasAlzasMeliferas = trim($_POST['medias']);
@@ -31,10 +30,9 @@
                 $anchuraPiquera = trim($_POST['piquera']);
                 
 
-                $inserte = "INSERT INTO colmenas (apiario_id,colmena,cria, alzas, medias, alimentador,polen,propoleo,reinas,excluidora,piquera)
-            VALUES ('$apiario', '$tipoColmena', '$camaraCria', '$alzasMeliferas', '$mediasAlzasMeliferas', '$alimentador', '$trampaPolen', '$trampaPropoleo', '$jaulaReinas', '$rejillaExcluidora', '$anchuraPiquera')";
-
-$resultado = mysqli_query($conexion,$inserte);
+                $inserte = "INSERT INTO colmenas (colmena_id,cria, alzas, medias, alimentador,polen,propoleo,reinas,excluidora,piquera)
+            VALUES ('$colmenaid', '$camaraCria', '$alzasMeliferas', '$mediasAlzasMeliferas', '$alimentador', '$trampaPolen', '$trampaPropoleo', '$jaulaReinas', '$rejillaExcluidora', '$anchuraPiquera')";
+                $resultado = mysqli_query($conexion,$inserte);
 
 
 

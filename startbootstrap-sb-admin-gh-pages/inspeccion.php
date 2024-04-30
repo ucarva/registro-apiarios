@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Inspeccion</title>
+    <title>Montaña Dorada</title>
+    <link rel="stylesheet" href="/startbootstrap-sb-admin-gh-pages/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -26,7 +27,7 @@
             <div class="input-group">
                 <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
                     aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
+                <button class="btn btn-warning" id="btnNavbarSearch" type="button"><i
                         class="fas fa-search"></i></button>
             </div>
         </form>
@@ -51,12 +52,26 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-
                         <a class="nav-link" href="index.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Inicio
                         </a>
-
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapsePagesApiario" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Apiarios
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePagesApiario" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link" href="./registroapiario.php">Registrar</a>
+                                <a class="nav-link" href="./consultaapiario.php">Consultar</a>
+                                <a class="nav-link" href="./consulcolmena.php">Consultar</a>
+                                <a class="nav-link" href="#">Modificar</a>
+                                <a class="nav-link" href="#">Eliminar</a>
+                            </nav>
+                        </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
                             aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
@@ -66,18 +81,14 @@
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-
-                                <a class="nav-link" href="#">Nueva inspección</a>
+                                <a class="nav-link" href="../startbootstrap-sb-admin-gh-pages/inspeccion.html">Nueva
+                                    inspección</a>
                                 <a class="nav-link" href="#">Enjambres</a>
                                 <a class="nav-link" href="#">Cosecha</a>
                                 <a class="nav-link" href="#">Calendario floral</a>
                                 <a class="nav-link" href="#">Finanzas contabilidad</a>
                                 <a class="nav-link" href="./registrocolmenas.html">Registrar Colmena</a>
                                 <a class="nav-link" href="#">Ayuda</a>
-
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
-                                    data-bs-parent="#sidenavAccordionPages">
-                                </div>
                             </nav>
                         </div>
                         <!--Administración-->
@@ -87,14 +98,11 @@
                             Administracion
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-
-
-
-
-                        <div class="collapse" id="collapsePagesadmin" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="collapsePagesadmin" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link" href="./registrousuario.html">Crear usuarios</a>
-                             
+
                             </nav>
                         </div>
 
@@ -113,14 +121,14 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Conectado como:</div>
-                    Colmenas 2024
+                    Montaña Dorada
                 </div>
             </nav>
         </div>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Apiarios</h1>
+                    <h1 class="mt-4 text-center">INSPECCIÓN COLMENA</h1>
 
                     <!--Formulario de apiario-->
                     <div class="container-fluid">
@@ -128,65 +136,55 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">Control de Apiarios Montaña Dorada</h3>
-                                    </div>
-                                    <!-- /.card-header -->
+                                        
                                     <div class="card-body">
-                                        <table id="example2" class="table table-bordered table-hover">
-                                            <thead>
+                                        <table id="tablaapiarios" class="table table-bordered table-hover">
+                                            <thead class="text-center">
                                                 <tr>
-                                                    <th>Nombre apiario</th>
-                                                    <th>Ubicación</th>
-                                                    <th>Nombre Finca</th>
-                                                    <th>Cantidad colmena</th>
-                                                    <th>Editar</th>
+                                                    <th>Equipamiento colmena</th>
+                                                    <th>Colonia</th>
+                                                    <th>Cuadros</th>
+                                                    <th>Reina</th>
+                                                    <th>Tratamiento</th>
+                                                    <th>Alimentación</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Apiario1</td>
-                                                    <td>Ocaña</td>
-                                                    <td>Finca pepito</td>
-                                                    <td>6</td>
-                                                    <td><s class="btn btn-warning me-md-2" type="button">Ver</button>
-                                                    </td>
-                                                </tr>
+                                            <tbody> 
 
-                                                <tr>
-                                                    <td>Apiario2</td>
-                                                    <td>Hacari</td>
-                                                    <td>Finca los cristales</td>
-                                                    <td>8</td>
-                                                    <td>
-                                                        <button class="btn btn-warning me-md-2"
-                                                            type="button">Ver</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Apiario3</td>
-                                                    <td>Convencion</td>
-                                                    <td>Finca pedro</td>
-                                                    <td>4</td>
-                                                    <td><button class="btn btn-warning me-md-2"
-                                                            type="button">Ver</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Apiario4</td>
-                                                    <td>Buena vista</td>
-                                                    <td>Finca linda</td>
-                                                    <td>12</td>
-                                                    <td><button class="btn btn-warning me-md-2"
-                                                            type="button">Ver</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Apiario5</td>
-                                                    <td>Aguas claras</td>
-                                                    <td>Finca la soledad</td>
-                                                    <td>9</td>
-                                                    <td><button class="btn btn-warning me-md-2"
-                                                            type="button">Ver</button></td>
+                                           <!-- Codigo de consulta registros bdd-->
+                                           <?php
+                                                // Incluye el archivo de conexión
+                                                include 'consulapiario.php';
 
-                                                </tr>
+                                                
+
+                                                // Query para seleccionar todos los datos de la tabla apiarios
+                                                $sql = "SELECT id  FROM iniciosesiondb.colmenas";
+                                                $result = $conn->query($sql);
+
+                                                if ($result->num_rows > 0) {
+                                                    // Muestra los datos de cada fila
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        echo "<tr>";
+                                                        echo "<td> <form action='equipacolmena.php' method='get'><input class='btn btn-warning' value='Iniciar' type='submit'/>
+                                                        <input type='hidden' name='colmena_id' value=". $row["id"] . " />
+                                                        </form></td>";
+                                                        
+
+                                                        // Añade más celdas según la estructura de tu tabla apiarios
+                                                        echo "</tr>";
+                                                    }
+                                                } else {
+                                                    echo "0 resultados";
+                                                }
+                                                // Cierra la conexión
+                                                $conn->close();
+
+                                                ?>
+
+                                                                         
+                                                
+                                           
                                             </tbody>
 
                                         </table>

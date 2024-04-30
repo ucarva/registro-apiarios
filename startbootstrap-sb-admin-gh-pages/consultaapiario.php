@@ -178,8 +178,6 @@
                                                                                 /*llamamos el id y el nombre de la BDD */
                                                                                 echo "  <option  name='nombre' value=" . $row["id"] . ">"  . $row["nombre"] . "</option>";
                                                                             }
-
-                                                                         
                                                                         } else {
                                                                             echo "0 resultados";
                                                                         }
@@ -209,8 +207,7 @@
                                                                         <input type="date" name="fecha" id="start" name="trip_start" value="2020-07-22" min="2020-01-01" max="2026-12-31" />
                                                                     </div>
 
-                                                                    
-
+                                                                   
 
                                                                     
                                                                 </div>
@@ -266,7 +263,7 @@
                                                         echo "<td>" . $row["granjero"] . "</td>";
                                                         echo "<td>" . $row["telefono"] . "</td>";
                                                         echo "<td>" . $row["fecha"] . "</td>";
-                                                        echo "<td> <form action='consulcolmena.php' method='get'><input value='Ver colmenas' type='submit'/>
+                                                        echo "<td> <form action='consulcolmena.php' method='get'><input class='btn btn-warning' value='Ver colmenas' type='submit'/>
                                                         <input type='hidden' name='apiario_id' value=". $row["id"] . " />
                                                         </form></td>";
 
