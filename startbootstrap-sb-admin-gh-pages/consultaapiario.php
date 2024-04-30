@@ -301,12 +301,14 @@
                                         <table id="tablaapiarios" class="table table-bordered table-hover">
                                             <thead class="text-center">
                                                 <tr>
-                                                    <th id="Nombreapiario">Nombre apiario</th>
+                                             
+                                                    <th >Nombre apiario</th>
                                                     <th>Ubicación</th>
                                                     <th>Nombre Finca</th>
                                                     <th>Nombre Granjero</th>
                                                     <th>Telefono Granjero</th>
                                                     <th>Fecha instalación</th>
+                                                    <th>Acción</th>
                                                    
                                                 </tr>
                                             </thead>
@@ -323,7 +325,8 @@
                                                 if ($result->num_rows > 0) {
                                                     // Muestra los datos de cada fila
                                                     while ($row = $result->fetch_assoc()) {
-                                                        echo "<tr>";
+                                                        echo "   <tr>";
+                                                      
 
                                                         echo "<td >" . $row["nombre"] . "</td>";
                                                         echo "<td>" . $row["lugar"] . "</td>";
@@ -331,7 +334,9 @@
                                                         echo "<td>" . $row["granjero"] . "</td>";
                                                         echo "<td>" . $row["telefono"] . "</td>";
                                                         echo "<td>" . $row["fecha"] . "</td>";
-                                                        
+                                                        echo "<td> <form action='consulcolmena.php' method='get'><input value='Ver colmenas' type='submit'/>
+                                                        <input type='hidden' name='apiario_id' value=". $row["id"] . " />
+                                                        </form></td>";
 
 
                                                         // Añade más celdas según la estructura de tu tabla apiarios
