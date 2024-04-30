@@ -157,7 +157,7 @@
                                                             include 'consulapiario.php';
                                                             $apiario_id=$_GET['apiario_id'];
                                                                 
-                                                                $sql = "SELECT apiarios.nombre, colmenas.id, colmenas.colmena  FROM colmenas,apiarios where apiarios.id=colmenas.apiario_id AND apiario_id=$apiario_id";
+                                                                $sql = "SELECT apiarios.nombre, colmenas.id, colmenas.tipo  FROM colmenas,apiarios where apiarios.id=colmenas.apiario_id AND apiario_id=$apiario_id";
                                                                 $result = $conn->query($sql);
                                                                         
 
@@ -167,7 +167,7 @@
                                                                                 echo "<tr>";
                         
                                                                                 echo "<td class='text-center'>" . $row["nombre"] . "</td>";
-                                                                                echo "<td class='text-center'>" . $row["colmena"] . "</td>";
+                                                                                echo "<td class='text-center'>" . $row["tipo"] . "</td>";
                                                                                 echo "<td > <div class='d-grid gap-2 col-6  mx-auto'><button type='submit' class='btn btn-warning'  >Inspección</button></td></div> ";
                                                                                 echo "</tr>";
                                                                                 
