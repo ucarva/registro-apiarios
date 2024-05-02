@@ -14,11 +14,11 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <script>
-    function confirmacion (){
-        var respuesta=confirm("¿La información es correcta?");
-        if(respuesta==true){
+    function confirmacion() {
+        var respuesta = confirm("¿La información es correcta?");
+        if (respuesta == true) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -134,111 +134,115 @@
 
                                     <!--Formulario-->
                                     <div class="container">
-                                                        
-                                                        <form action="equipamiento.php" method="post">
-                                                            <div class="mb-3">
-                                                              
 
-                                    <h3 class="text-center font-weight-light my-4 ">
-                                        Equipamiento Colmena
-                                    </h3>
-                                 
+                                        <form action="equipamiento.php" method="post">
+                                            <div class="mb-3">
+                                                <h3 class="text-center font-weight-light my-4 ">
+                                                    Equipamiento Colmena
+                                                </h3>
 
-                                    <div class="col-12">
-                                        <label for="inputState" class="form-label">Cámara de cría:</label>
-                                        <select id="inputState" name="cria" class="form-select">
-                                            <option selected>1</option>
-                                            <option selected>2</option>
-                                            <option selected>3</option>
-                                            <option selected>4</option>
-                                            <option selected>5</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label for="inputState" class="form-label">Alzas melíferas:</label>
-                                        <select id="inputState" name="alzas" class="form-select">
-                                            <option selected>1</option>
-                                            <option selected>2</option>
-                                            <option selected>3</option>
-                                            <option selected>4</option>
-                                            <option selected>5</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="inputState" class="form-label">Medias alzas melíferas:</label>
-                                        <select id="inputState" name="medias" class="form-select">
-                                            <option selected>1</option>
-                                            <option selected>2</option>
-                                            <option selected>3</option>
-                                            <option selected>4</option>
-                                            <option selected>5</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="inputState" class="form-label">Alimentador:</label>
-                                        <select id="inputState" name="alimentador" class="form-select">
-                                            <option selected>Si</option>
-                                            <option selected>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="inputState" class="form-label">Trampa de polen:</label>
-                                        <select id="inputState" name="polen" class="form-select">
-                                            <option selected>Si</option>
-                                            <option selected>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="inputState" class="form-label">Trampa para propóleo:</label>
-                                        <select id="inputState" name="propoleo" class="form-select">
-                                            <option selected>Si</option>
-                                            <option selected>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="inputState" class="form-label">Jaula para abejas reinas:</label>
-                                        <select id="inputState" name="reinas" class="form-select">
-                                            <option selected>Si</option>
-                                            <option selected>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="inputState" class="form-label">Rejilla excluidora:</label>
-                                        <select id="inputState" name="excluidora" class="form-select">
-                                            <option selected>Si</option>
-                                            <option selected>No</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="inputState" class="form-label">Anchura de la piquera:</label>
-                                        <select id="inputState" name="piquera" class="form-select">
-                                            <option selected>1</option>
-                                            <option selected>2</option>
-                                            <option selected>3</option>
-                                            <option selected>4</option>
-                                            <option selected>5</option>
-                                            <option selected>6</option>
-                                            <option selected>7</option>
-                                            <option selected>8</option>
-                                            <option selected>9</option>
-                                            <option selected>10</option>
-                                        </select>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                                        <input class="btn btn-primary" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
-                                    </div>
-                                
-                                </form>
-                                                            <!-- fin Formulario de registro-->
-                                                        </div>
-                                                        <!-- Fin contaider de formulario-->
-                                                    </div>
-
-                                <?php
+                                                <?php
                                 include("equipamiento.php");
+                                
+                                $colmena_id=$_GET['colmena_id'];
+
+                                
                                 ?>
+                                                <div>
+                                                    <input type="hidden" name="colmena_id" value="<?php echo $colmena_id;?>">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Cámara de cría:</label>
+                                                    <select id="inputState" name="cria" class="form-select">
+                                                        <option selected>1</option>
+                                                        <option selected>2</option>
+                                                        <option selected>3</option>
+                                                        <option selected>4</option>
+                                                        <option selected>5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Alzas melíferas:</label>
+                                                    <select id="inputState" name="alzas" class="form-select">
+                                                        <option selected>1</option>
+                                                        <option selected>2</option>
+                                                        <option selected>3</option>
+                                                        <option selected>4</option>
+                                                        <option selected>5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Medias alzas melíferas:</label>
+                                                    <select id="inputState" name="medias" class="form-select">
+                                                        <option selected>1</option>
+                                                        <option selected>2</option>
+                                                        <option selected>3</option>
+                                                        <option selected>4</option>
+                                                        <option selected>5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Alimentador:</label>
+                                                    <select id="inputState" name="alimentador" class="form-select">
+                                                        <option selected>Si</option>
+                                                        <option selected>No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Trampa de polen:</label>
+                                                    <select id="inputState" name="polen" class="form-select">
+                                                        <option selected>Si</option>
+                                                        <option selected>No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Trampa para propóleo:</label>
+                                                    <select id="inputState" name="propoleo" class="form-select">
+                                                        <option selected>Si</option>
+                                                        <option selected>No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Jaula para abejas reinas:</label>
+                                                    <select id="inputState" name="reinas" class="form-select">
+                                                        <option selected>Si</option>
+                                                        <option selected>No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Rejilla excluidora:</label>
+                                                    <select id="inputState" name="excluidora" class="form-select">
+                                                        <option selected>Si</option>
+                                                        <option selected>No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Anchura de la piquera:</label>
+                                                    <select id="inputState" name="piquera" class="form-select">
+                                                        <option selected>1</option>
+                                                        <option selected>2</option>
+                                                        <option selected>3</option>
+                                                        <option selected>4</option>
+                                                        <option selected>5</option>
+                                                        <option selected>6</option>
+                                                        <option selected>7</option>
+                                                        <option selected>8</option>
+                                                        <option selected>9</option>
+                                                        <option selected>10</option>
+                                                    </select>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                                    <input class="btn btn-primary" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
+                                                </div>
+
+                                        </form>
+                                        <!-- fin Formulario de registro-->
+                                    </div>
+                                    <!-- Fin contaider de formulario-->
+                                </div>
+
+                               
                                 <h2></h2>
 
 

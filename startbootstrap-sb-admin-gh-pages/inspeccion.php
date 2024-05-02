@@ -142,6 +142,7 @@
                                             <thead class="text-center">
                                                 <tr>
                                                     <th>Equipamiento colmena</th>
+                                                    
                                                     <th>Colonia</th>
                                                     <th>Cuadros</th>
                                                     <th>Reina</th>

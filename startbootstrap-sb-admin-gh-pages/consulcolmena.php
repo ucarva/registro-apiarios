@@ -169,8 +169,8 @@
 
                                                                                /* echo "  <option  name='nombre' value=" . $row["id"] . ">"  . $row["nombre"] . "</option>";*/
 
-                                                                                echo "<td> <form action='inspeccion.php' method='get'><div class='d-grid gap-2 col-6  mx-auto'><button  type='submit' class='btn btn-warning'><a href='inspeccion.php' >Inspección</a></button></td></div>
-                                                                                <input type='hidden' name='apiario_id' value=". $row["id"] . " />
+                                                                                echo "<td> <form action='inspeccion.php' method='get'><div class='d-grid gap-2 col-6  mx-auto'><button  type='submit' class='btn btn-warning'>Inspeccion</button></td></div>
+                                                                                <input type='hidden' name='colmena_id' value=". $row["id"] . " />
                                                                                 </form></td>";
                                                                                 echo "</tr>";
                                                                                 

@@ -18,7 +18,7 @@
             
             ){
 
-                $colmenaid = trim($_POST['colmena_id']); 
+               $colmena_id = trim($_POST['colmena_id']);
                 $camaraCria = trim($_POST['cria']);
                 $alzasMeliferas = trim($_POST['alzas']);
                 $mediasAlzasMeliferas = trim($_POST['medias']);
@@ -30,8 +30,8 @@
                 $anchuraPiquera = trim($_POST['piquera']);
                 
 
-                $inserte = "INSERT INTO colmenas (colmena_id,cria, alzas, medias, alimentador,polen,propoleo,reinas,excluidora,piquera)
-            VALUES ('$colmenaid', '$camaraCria', '$alzasMeliferas', '$mediasAlzasMeliferas', '$alimentador', '$trampaPolen', '$trampaPropoleo', '$jaulaReinas', '$rejillaExcluidora', '$anchuraPiquera')";
+                $inserte = "INSERT INTO equipamiento (colmena_id,cria, alzas, medias, alimentador,polen,propoleo,reinas,excluidora,piquera)
+            VALUES ($colmena_id,'$camaraCria', '$alzasMeliferas', '$mediasAlzasMeliferas', '$alimentador', '$trampaPolen', '$trampaPropoleo', '$jaulaReinas', '$rejillaExcluidora', '$anchuraPiquera')";
                 $resultado = mysqli_query($conexion,$inserte);
 
 
@@ -39,7 +39,7 @@
 
                    if($resultado){
                     // Redirigir al usuario a una nueva página después de procesar el formulario
-                        header("Location:apiarios.php");
+                        header("Location:index.html");
                         exit(); // Asegúrate de que el script se detenga después de redirigir
                         ?>
                     <script >
