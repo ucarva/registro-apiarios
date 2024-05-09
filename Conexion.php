@@ -1,14 +1,5 @@
-<?php
+<?php 
 
-    $host = "localhost";
-    $User = "root";
-    $pass = "";
+    $conexion = mysqli_connect("localhost", "root", "", "bdmontanadorada");
 
-    $db = "iniciosesiondb";
-
-    $conexion = mysqli_connect($host, $User , $pass, $db);
-
-    if (!$con) {
-     echo "Conexion fallida";
-    }
-
+?>

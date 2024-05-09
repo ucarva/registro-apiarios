@@ -57,12 +57,12 @@
                 <form action="IniciarSesion.php" method="POST">
                     <div class="mb-4">
                         <label for="text" class="form-label">Usuario</label>
-                        <input type="text" name="Usuario" placeholder="Nombre de usuario" class="form-control">
+                        <input type="text" name="nombre" placeholder="Nombre de usuario" class="form-control">
                     </div>
                     <div class="mb-4">
 
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" name="Clave" placeholder="Clave" class="form-control">
+                        <input type="password" name="contraseña" placeholder="Clave" class="form-control">
 
                     </div>
                     <div class="d-grid">

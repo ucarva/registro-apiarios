@@ -1,8 +1,8 @@
 <?php   
     session_start();
-    include('Conexion.php');
+    include('conexion.php');
 
-    if (isset($_POST['Usuario']) && isset($_POST['Clave']) ) {
+    if (isset($_POST['nombre']) && isset($_POST['contraseña']) ) {
 
     function validate($data){
         $data = trim($data);
@@ -11,29 +11,29 @@
         return $data;
     }
 
-    $Usuario = validate($_POST['Usuario']); 
-    $Clave = validate($_POST['Clave']);
+    $nombre = validate($_POST['nombre']); 
+    $contraseña = validate($_POST['contraseña']);
 
-    if (empty($Usuario)) {
+    if (empty($nombre)) {
         header("Location: Index.php?error=El Usuario Es Requerido");
         exit();
-    }elseif (empty($Clave)) {
+    }elseif (empty($contraseña)) {
         header("Location: Index.php?error=La clave Es Requerida");
         exit();
     }else{
 
         // $Clave = md5($Clave);
 
-        $Sql = "SELECT * FROM usuarios WHERE Usuario = '$Usuario' AND Clave='$Clave'";
+        $Sql = "SELECT * FROM usuarios WHERE nombre = '$nombre' AND contraseña='$contraseña'";
         $result = mysqli_query($conexion, $Sql);
 
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
-            if ($row['Usuario'] === $Usuario && $row['Clave'] === $Clave) {
-                $_SESSION['Usuario'] = $row['Usuario'];
-                $_SESSION['Nombre_Completo'] = $row['Nombre_Completo'];
-                $_SESSION['Id'] = $row['Id'];
-                header("Location:./startbootstrap-sb-admin-gh-pages/index.html");
+            if ($row['nombre'] === $nombre && $row['contraseña'] === $contraseña) {
+                $_SESSION['nombre'] = $row['nombre'];
+                $_SESSION['nombre_completo'] = $row['nombre_completo'];
+                $_SESSION['id'] = $row['id'];
+                header("Location:./layoutAdmin/index.html");
                 exit();
             }else {
                 header("Location: Index.php?error=El usuario o la clave son incorrectas");
