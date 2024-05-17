@@ -125,7 +125,7 @@
                                         <form action="tratamiento.php" method="post">
                                             <div class="mb-3">
                                                 <h3 class="text-center font-weight-light my-4 ">
-                                                    Registro Trtatmiento
+                                                    Registro Tratamiento
                                                 </h3>
                                                 <div>
                                                     <input type="hidden" name="colmena_id" value="<?php echo $colmena_id; ?>">
@@ -177,7 +177,7 @@
                                                     </div>
                                                 </div>
 
-                                                
+
                                         </form>
 
                                         <script>
@@ -196,7 +196,6 @@
                                         </script>
 
 
-
                                         <div class="col-12">
                                             <label for="inputState" class="form-label">Notas:</label>
                                             <div id="inputState" name="notas" class="">
@@ -205,9 +204,10 @@
                                         </div>
 
                                         <div class="modal-footer">
-                                        <button class="btn btn-danger" style="margin: 20px;" ><a href="../inspeccion.php"  style="text-decoration: none; color:black" >Cerrar</a></button>
-                                        <input class="btn btn-warning" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
+                                            <button class="btn btn-danger" style="margin: 20px;"><a href="../inspeccion.php?colmena_id=<?php echo $colmena_id; ?>" style="text-decoration: none; color:black;">Cerrar</a></button>
+                                            <input class="btn btn-warning" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
                                         </div>
+
                                         </form>
                                         <!-- fin Formulario de registro-->
                                     </div>

@@ -159,7 +159,7 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="text" class="form-label">Año Nacimiento</label>
-                                                    <input type="date" name="año_nacimiento" id="start" value="2020-07-22" min="2020-01-01" max="2040-12-31" />
+                                                    <input type="date" name="año_nacimiento" id="start" min="2020-01-01" max="2040-12-31" value="2024-01-01"  />
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="inputState" class="form-label">Postura:</label>
@@ -190,9 +190,9 @@
                                                 </div>
 
                                                 <div class="modal-footer">
-                                                <button class="btn btn-danger" style="margin: 20px;" ><a href="../inspeccion.php"  style="text-decoration: none; color:black" >Cerrar</a></button>
-                                                <input class="btn btn-warning" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
-                                                </div>
+                                            <button class="btn btn-danger" style="margin: 20px;"><a href="../inspeccion.php?colmena_id=<?php echo $colmena_id; ?>" style="text-decoration: none; color:black;">Cerrar</a></button>
+                                            <input class="btn btn-warning" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
+                                        </div>
                                         </form>
                                         <!-- fin Formulario de registro-->
                                     </div>
@@ -222,6 +222,7 @@
     <script src="assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
+   
 
 
 

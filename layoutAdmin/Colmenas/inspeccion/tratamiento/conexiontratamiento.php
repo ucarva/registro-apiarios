@@ -26,6 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($resultado) {
 ?>
+
+
+           
             <script>
                 alert("Tratamiento registrado exitosamente");
             </script>

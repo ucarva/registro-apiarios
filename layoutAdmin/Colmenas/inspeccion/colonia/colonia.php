@@ -184,9 +184,9 @@
                                                 </div>
                                                
                                                 <div class="modal-footer">
-                                                <button class="btn btn-danger" style="margin: 20px;" ><a href="../inspeccion.php"  style="text-decoration: none; color:black" >Cerrar</a></button>
-                                                <input class="btn btn-warning" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
-                                                </div>
+                                            <button class="btn btn-danger" style="margin: 20px;"><a href="../inspeccion.php?colmena_id=<?php echo $colmena_id; ?>" style="text-decoration: none; color:black;">Cerrar</a></button>
+                                            <input class="btn btn-warning" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
+                                        </div>
                                         </form>
                                         <!-- fin Formulario de registro-->
                                     </div>

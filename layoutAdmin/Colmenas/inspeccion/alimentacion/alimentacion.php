@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Montaña Dorada</title>
-    <link rel="stylesheet" href="./layoutAdmin/css/styles.css">
+    <link rel="stylesheet" href="../../../layoutAdmin/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="../../../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -173,11 +173,9 @@
                                                                    
 
                                                 <div class="modal-footer">
-                                                   
-                                                   <button class="btn btn-danger" style="margin: 20px;" ><a href="../inspeccion.php"  style="text-decoration: none; color:black" >Cerrar</a></button>
-                                                    
-                                                   <input class="btn btn-warning" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
-                                                </div>
+                                            <button class="btn btn-danger" style="margin: 20px;"><a href="../inspeccion.php?colmena_id=<?php echo $colmena_id; ?>" style="text-decoration: none; color:black;">Cerrar</a></button>
+                                            <input class="btn btn-warning" type="submit" name="colmodal" value="Enviar" onclick="return confirmacion()">
+                                        </div>
                                         </form>
                                         <!-- fin Formulario de registro-->
                                     </div>
