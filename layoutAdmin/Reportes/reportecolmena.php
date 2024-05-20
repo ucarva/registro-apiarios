@@ -95,8 +95,6 @@
 
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-
-
                                     <div class="card-header ">
                                         <div class="table-responsive">
                                             <h3 class="text-center font-weight-light my-4 ">
@@ -104,14 +102,14 @@
                                                             include '../Colmenas/conexion.php';
                                                             $apiario_id = $_GET['apiario_id'];
 
-                                                            $sql = "SELECT  apiarios.nombre FROM apiarios,colmenas WHERE
-                                                                            apiarios.id=colmenas.apiario_id AND
-                                                                            colmenas.apiario_id= $apiario_id";
-                                                                            
-                                                            $result = $conn->query($sql);
+                                                            $sql = "SELECT apiarios.nombre FROM apiarios, colmenas WHERE apiarios.id = colmenas.apiario_id AND colmenas.apiario_id = $apiario_id LIMIT 1";
 
-                                                            while ($row = $result->fetch_assoc() ) {
-                                                                echo  $row["nombre"];
+                                                            $result = $conn->query($sql);
+                                                            if ($result->num_rows > 0) {
+                                                                $row = $result->fetch_assoc();
+                                                                echo $row["nombre"];
+                                                            } else {
+                                                                echo "Nombre no encontrado";
                                                             }
                                                             ?>
                                             </h3>
@@ -129,7 +127,6 @@
                                                     ?>
                                                 </div>
                                             </section>
-
                                         </div>
                                     </div>
                                 </div>
