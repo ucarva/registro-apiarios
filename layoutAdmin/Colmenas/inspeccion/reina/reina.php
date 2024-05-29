@@ -180,7 +180,7 @@
                                                         <option selected>Madura</option>
                                                         <option selected>Vieja</option>
                                                         <option selected>Muerta</option>
-                                                        <h3>Hola mundo prueba</h3>
+                                                        
                                                     </select>
                                                 </div>
                                                 <div class="col-12">
