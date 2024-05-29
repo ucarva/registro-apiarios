@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-05-2024 a las 00:11:33
+-- Tiempo de generación: 29-05-2024 a las 16:19:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -51,7 +51,9 @@ INSERT INTO `alimentacion` (`id`, `colmena_id`, `jarabe`, `azucar`, `board`, `ca
 (7, 1, 'concentración: otro', '', '', '', ''),
 (8, 0, 'concentración: otro', '', '', '', ''),
 (9, 0, 'concentración: otro', '', '', '', ''),
-(10, 1, 'concentración: otro', '50', '20', '15', '12');
+(10, 1, 'concentración: otro', '50', '20', '15', '12'),
+(11, 0, 'concentración: 2:1', '50', '20', '15', '12'),
+(12, 3, 'concentración: 2:1', '50', '20', '15', '12');
 
 -- --------------------------------------------------------
 
@@ -78,7 +80,8 @@ INSERT INTO `apiarios` (`id`, `nombre`, `municipio`, `finca`, `granjero`, `telef
 (1, 'colmenero', 'Hacari', 'la sagrada', 'Juan Esteban', '3125468752', '2023-02-22', ''),
 (2, 'Don Rafa', 'Ocaña', 'Limonal', 'Samuel', '3178394885', '2024-06-12', ''),
 (3, 'Jalea Real', 'playa', 'La unión', 'Dulian', '56325874', '2020-07-22', ''),
-(4, 'Cocotos', 'Abrego', 'El cebollero', 'Sebastian hernandez', '3123339514', '2024-05-22', '');
+(4, 'Cocotos', 'Abrego', 'El cebollero', 'Sebastian hernandez', '3123339514', '2024-05-22', ''),
+(5, 'TECNOPARQUE', 'cucuta', 'palitos', 'Edwin Barrientos', '5695153', '2024-05-22', '');
 
 -- --------------------------------------------------------
 
@@ -104,7 +107,11 @@ INSERT INTO `colmenas` (`id`, `apiario_id`, `tipo`, `qr`, `fecha_instal`) VALUES
 (3, 3, 'Núcleo', 'QR238225', '2020-07-22'),
 (4, 3, 'Colmena Vertical', 'QR871428', '2020-07-22'),
 (5, 4, 'Camara de cría', 'QR705456', '2024-03-22'),
-(6, 4, 'Núcleo', 'QR202432', '2020-07-22');
+(6, 4, 'Núcleo', 'QR202432', '2020-07-22'),
+(7, 5, 'Núcleo', 'QR487299', '2020-07-29'),
+(8, 5, 'Camara de cría', 'QR869818', '2020-07-22'),
+(9, 5, 'Núcleo', 'QR293054', '2020-07-22'),
+(10, 5, 'Otra', 'QR724905', '2020-07-22');
 
 -- --------------------------------------------------------
 
@@ -128,7 +135,8 @@ CREATE TABLE `colonias` (
 --
 
 INSERT INTO `colonias` (`id`, `colmena_id`, `fuerza`, `temperamento`, `celdas`, `enjambre`, `alimento`, `notas`) VALUES
-(1, 1, 'Muy fuerte', 'Muy Defensiva', 'No', 'No', 'No', 'excelente');
+(1, 1, 'Muy fuerte', 'Muy Defensiva', 'No', 'No', 'No', 'excelente'),
+(2, 3, 'Muy Débil', 'Muy Defensiva', 'No', 'No', 'No', 'buena');
 
 -- --------------------------------------------------------
 
@@ -192,7 +200,8 @@ INSERT INTO `equipamiento` (`id`, `colmena_id`, `cria`, `alzas`, `medias`, `alim
 (8, 1, 5, 5, 5, 'No', 'No', 'No', 'No', 'No', 20),
 (9, 1, 5, 5, 5, 'No', 'No', 'No', 'No', 'No', 20),
 (10, 6, 5, 5, 5, 'No', 'Si', 'No', 'No', 'No', 20),
-(11, 6, 5, 5, 5, 'No', 'No', 'No', 'No', 'No', 20);
+(11, 6, 5, 5, 5, 'No', 'No', 'No', 'No', 'No', 20),
+(12, 7, 5, 5, 5, 'No', 'No', 'No', 'No', 'Si', 20);
 
 -- --------------------------------------------------------
 
@@ -224,7 +233,10 @@ INSERT INTO `reina` (`id`, `colmena_id`, `raza`, `linea`, `numero`, `fuente`, `a
 (4, 2, 'China', 'promax', '14', 'Comprada', '2024-02-22', 'Muy Buena', 'Madura', 'comprada nueva'),
 (5, 5, 'americana', 'exterior', '32', 'Atrapada', '2023-06-22', 'Buena', 'Realera', 'Productiva'),
 (6, 6, 'americana', 'exterior', '32', 'Atrapada', '2020-07-07', 'Muy Buena', 'Muerta', 'Dulian'),
-(7, 6, 'China', 'promax', '32', 'Criada', '2020-07-22', 'Regular', 'Muerta', 'gdg');
+(7, 6, 'China', 'promax', '32', 'Criada', '2020-07-22', 'Regular', 'Muerta', 'gdg'),
+(8, 9, 'americana', 'exterior', '14', 'Criada', '2024-01-01', 'Regular', 'Muerta', 'bvb'),
+(9, 9, 'americana', 'exterior', '14', 'Criada', '2024-01-01', 'Regular', 'Muerta', 'bvb'),
+(10, 2, 'americana', 'exterior', '14', 'Comprada', '2022-02-01', 'Regular', 'Muerta', 'fgs');
 
 -- --------------------------------------------------------
 
@@ -252,7 +264,8 @@ INSERT INTO `tratamiento` (`id`, `colmena_id`, `enfermedad`, `medicina`, `nombre
 (1, 1, 'No hay nada', 0, '', '2020-07-22', '2020-07-22', '', 'Buen estado'),
 (2, 1, 'Nosemosis', 0, 'acetaminofen', '2024-05-22', '2024-11-14', '30 mg', 'estar mas pendiente'),
 (3, 0, 'Nosemosis', 0, '', '2020-07-22', '2020-07-22', '', 'dsfdds'),
-(4, 0, 'Nosemosis', 0, '', '2020-07-22', '2020-07-22', '', 'dsfdds');
+(4, 0, 'Nosemosis', 0, '', '2020-07-22', '2020-07-22', '', 'dsfdds'),
+(5, 0, 'Nosemosis', 0, 'acetaminofen', '2020-07-22', '2020-07-22', '30 mg', 'fdsfadsfasf');
 
 -- --------------------------------------------------------
 
@@ -340,25 +353,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alimentacion`
 --
 ALTER TABLE `alimentacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `apiarios`
 --
 ALTER TABLE `apiarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `colmenas`
 --
 ALTER TABLE `colmenas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `colonias`
 --
 ALTER TABLE `colonias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `cuadros`
@@ -370,19 +383,19 @@ ALTER TABLE `cuadros`
 -- AUTO_INCREMENT de la tabla `equipamiento`
 --
 ALTER TABLE `equipamiento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `reina`
 --
 ALTER TABLE `reina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `tratamiento`
 --
 ALTER TABLE `tratamiento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
