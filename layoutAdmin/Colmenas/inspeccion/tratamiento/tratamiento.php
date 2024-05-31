@@ -163,14 +163,17 @@
                                                         <label for="inputState" class="form-label">Nombre Medicina:</label>
                                                         <input type="text" name="nombre_medicina" class="form-control" id="inputNombreMedicina" placeholder="Nombre Medicina" />
                                                     </div>
-                                                    <div class="col-12">
-                                                        <label for="text" class="form-label">Fecha de aplicación:</label>
-                                                        <input type="date" name="fecha_aplicacion" id="fecha_aplicacion" value="2020-07-22" min="2020-01-01" max="2040-12-31" />
+                                                    <div class="row g-3">
+                                                        <div class="col-md-6">
+                                                            <label for="fecha_aplicacion" class="form-label">Fecha de aplicación:</label>
+                                                            <input type="date" class="form-control" id="fecha_aplicacion" name="fecha_aplicacion" value="2020-07-22" min="2020-01-01" max="2040-12-31">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="fecha_dosis" class="form-label">Fecha siguiente dosis:</label>
+                                                            <input type="date" class="form-control" id="fecha_dosis" name="fecha_dosis" value="2020-07-22" min="2020-01-01" max="2040-12-31">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-12">
-                                                        <label for="text" class="form-label">Fecha siguiente dosis:</label>
-                                                        <input type="date" name="fecha_dosis" id="fecha_dosis" value="2020-07-22" min="2020-01-01" max="2040-12-31" />
-                                                    </div>
+
                                                     <div class="col-12">
                                                         <label for="inputState" class="form-label">Dosis:</label>
                                                         <input type="text" name="dosis" class="form-control" id="inputDosis" placeholder="Dosis" />
@@ -199,7 +202,7 @@
                                         <div class="col-12">
                                             <label for="inputState" class="form-label">Notas:</label>
                                             <div id="inputState" name="notas" class="">
-                                                <textarea name="notas" id=""></textarea>
+                                                <textarea class="col-12" name="notas" id=""></textarea>
                                             </div>
                                         </div>
 

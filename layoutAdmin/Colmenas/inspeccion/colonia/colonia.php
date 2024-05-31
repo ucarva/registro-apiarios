@@ -179,7 +179,7 @@
                                                 <div class="col-12">
                                                     <label for="inputState" class="form-label">Notas:</label>
                                                     <div id="inputState" name="notas" class="">
-                                                        <textarea name="notas" id=""></textarea>
+                                                        <textarea   class="col-12"  name="notas" id=""></textarea>
                                                     </div>
                                                 </div>
                                                

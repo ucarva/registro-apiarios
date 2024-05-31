@@ -204,8 +204,8 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <label for="inputState" class="form-label">Notas:</label>
-                                                    <div id="inputState" name="notas" class="">
-                                                        <textarea name="notas" id=""></textarea>
+                                                    <div id="inputState"  name="notas" class="">
+                                                        <textarea name="notas" class="col-12" id=""></textarea>
                                                     </div>
                                                 </div>
                                                
