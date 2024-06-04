@@ -24,17 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $inserte = "INSERT INTO tratamiento (colmena_id, enfermedad, medicina, nombre_medicina, fecha_aplicacion, fecha_dosis, dosis, notas) VALUES ('$colmena_id', '$enfermedad', '$medicina', '$nombre_medicina', '$fecha_aplicacion', '$fecha_dosis', '$dosis', '$notas')";
         $resultado = mysqli_query($conexion, $inserte);
 
-        if ($resultado) {
-?>
-
-
-           
+        if($resultado) {
+            ?>
             <script>
-                alert("Tratamiento registrado exitosamente");
+                var colmena_id = "<?php echo $colmena_id; ?>";
+                alert("Tarea registrada. colmena_id: " + colmena_id);
+                window.location.href = "../inspeccion.php?colmena_id=" + colmena_id;
             </script>
-<?php
+            <?php
+            exit(); // Asegurémonos de salir del script PHP después de la redirección
         } else {
-            echo '<h2 class="danger">Error al registrar el tratamiento</h2>';
+            echo '<h2 class="danger">Error al registrar la Tarea</h2>';
         }
     } else {
         echo '<h2 class="danger">Por favor, completa todos los campos</h2>';

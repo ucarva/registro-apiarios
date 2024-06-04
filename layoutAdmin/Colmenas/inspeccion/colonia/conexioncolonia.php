@@ -24,14 +24,14 @@ if(isset($_POST['colmodal'])) {
         $resultado = mysqli_query($conexion, $inserte);
 
         if($resultado) {
-            
             ?>
-            
-            <script >
-                alert("Tarea regisrada")
+            <script>
+                var colmena_id = "<?php echo $colmena_id; ?>";
+                alert("Tarea registrada. colmena_id: " + colmena_id);
+                window.location.href = "../inspeccion.php?colmena_id=" + colmena_id;
             </script>
-                                              
             <?php
+            exit(); // Asegurémonos de salir del script PHP después de la redirección
         } else {
             echo '<h2 class="danger">Error al registrar la Tarea</h2>';
         }
@@ -40,3 +40,5 @@ if(isset($_POST['colmodal'])) {
     }
 }
 ?>
+
+
