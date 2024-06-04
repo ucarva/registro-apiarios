@@ -24,7 +24,15 @@
         }
     }
 </script>
-
+<style>
+    .form-control:focus,
+        .form-select:focus {
+            border-color: #d3d3d3;
+            /* Color del borde al enfocar */
+            box-shadow: 0 0 0 0.25rem rgba(211, 211, 211, 0.5);
+            /* Sombra del cuadro al enfocar */
+        }
+</style>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
