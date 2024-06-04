@@ -180,11 +180,11 @@
                                                     <div class="row g-3">
                                                         <div class="col-md-6">
                                                             <label for="fecha_aplicacion" class="form-label">Fecha de aplicación:</label>
-                                                            <input type="date" class="form-control" id="fecha_aplicacion" name="fecha_aplicacion" value="2020-07-22" min="2020-01-01" max="2040-12-31">
+                                                            <input type="date" class="form-control" id="fecha_aplicacion" name="fecha_aplicacion" value="2024-01-01" min="2020-01-01" max="2040-12-31">
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="fecha_dosis" class="form-label">Fecha siguiente dosis:</label>
-                                                            <input type="date" class="form-control" id="fecha_dosis" name="fecha_dosis" value="2020-07-22" min="2020-01-01" max="2040-12-31">
+                                                            <input type="date" class="form-control" id="fecha_dosis" name="fecha_dosis" value="2024-01-01" min="2020-01-01" max="2040-12-31">
                                                         </div>
                                                     </div>
 
