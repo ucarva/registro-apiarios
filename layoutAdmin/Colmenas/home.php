@@ -196,12 +196,12 @@
                                                                     </select>
                                                                 </div>
                                                                 
-
-
-                                                                <div class="col-12">
-                                                                    <label for="text" class="form-label">Fecha Instalaciòn</label>
-                                                                    <input type="date" name="fecha_instal" id="start"  value="2020-07-22" min="2020-01-01" max="2026-12-31" />
-                                                                </div>
+                                                                <div class="mb-4">
+                        <label for="fecha_aplicacion" class="form-label">Fecha Instalaciòn </label>
+                        <input type="date" class="form-control" id="start" name="fecha_instal" value="2024-01-01" min="2020-01-01" max="2040-12-31">
+                      </div>
+                                                                
+                                                               
 
                                                                
 

@@ -173,10 +173,13 @@
                                                         <option selected>Criada</option>
                                                     </select>
                                                 </div>
+
+
                                                 <div class="col-12">
-                                                    <label for="text" class="form-label">Año Nacimiento</label>
-                                                    <input type="date" name="año_nacimiento" id="start" min="2020-01-01" max="2040-12-31" value="2024-01-01"  />
-                                                </div>
+                                                            <label for="fecha_aplicacion" class="form-label">Año Nacimiento: </label>
+                                                            <input type="date" class="form-control" id="start" name="año_nacimiento" value="2024-01-01" min="2020-01-01" max="2040-12-31">
+                                                        </div>
+                                               
                                                 <div class="col-12">
                                                     <label for="inputState" class="form-label">Postura:</label>
                                                     <select id="inputState" name="postura" class="form-select">
