@@ -182,7 +182,7 @@
                       <div class="mt-4 mb-10">
                         <div class="d-grid ">
 
-                          <input class="btn btn-dark" type="submit" name="register" value="Enviar">
+                          <input class="btn btn-warning" type="submit" name="register" value="Enviar">
 
                           <!---   <a class="btn  btn-dark btn-block  " href="../Index.php">Enviar</a>-->
                         </div>
