@@ -73,6 +73,7 @@
                         </div>
 
                         <!--Administración-->
+                        <!--
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePagesadmin" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             Administracion
@@ -89,9 +90,6 @@
 
                             </nav>
                         </div>
-
-
-
                         <div class="sb-sidenav-menu-heading">Addons</div>
                         <a class="nav-link" href="charts.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -101,6 +99,8 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tablas
                         </a>
+-->
+
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
