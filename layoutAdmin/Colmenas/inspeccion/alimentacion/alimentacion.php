@@ -68,6 +68,8 @@
                             </nav>
                         </div>
                         <!--Administración-->
+
+                        <!--
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePagesadmin" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             Administracion
@@ -89,7 +91,7 @@
                         <a class="nav-link" href="tables.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tablas
-                        </a>
+                        </a>-->
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
