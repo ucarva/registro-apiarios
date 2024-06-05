@@ -33,7 +33,7 @@
                 $_SESSION['nombre'] = $row['nombre'];
                 $_SESSION['nombre_completo'] = $row['nombre_completo'];
                 $_SESSION['id'] = $row['id'];
-                header("Location:./layoutAdmin/index.html");
+                header("Location:./layoutAdmin/index.php");
                 exit();
             }else {
                 header("Location: Index.php?error=El usuario o la clave son incorrectas");
