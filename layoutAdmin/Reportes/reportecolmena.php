@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,7 +12,6 @@
     <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
@@ -31,9 +29,7 @@
                     </ul>
                 </li>
             </ul>
-
         </form>
-
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
@@ -56,34 +52,6 @@
                                 <a class="nav-link" href="../Reportes/home.php">Reportes</a>
                             </nav>
                         </div>
-                        <!--Administración-->
-
-                        <!--
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePagesadmin" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            Administracion
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePagesadmin" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link" href="./registrousuario.html">Crear usuarios</a>
-                                <a class="nav-link" href="#">Eliminar Apiarios</a>
-                                <a class="nav-link" href="#">Eliminar Colmena</a>
-                                <a class="nav-link" href="#">Eliminar Usuario</a>
-                            </nav>
-                        </div>
-                        <div class="sb-sidenav-menu-heading">Addons</div>
-                        <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Graficos
-                        </a>
-                        <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tablas
-                        </a>
-
--->
-
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -97,7 +65,6 @@
                 <div class="container-fluid px-4">
                     <div class="container">
                         <div class="row justify-content-center">
-
                             <div class="container">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header ">
@@ -134,6 +101,11 @@
                                             </section>
                                         </div>
                                     </div>
+
+                                    <div class="text-center">
+                                        
+                                        <a href="../../fpdf/reporte.php?colmena_id=<?php echo $_GET['colmena_id']; ?>" class="btn  btn-danger"><i class="fa-regular fa-file-pdf"></i> Generar reportes</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -162,5 +134,4 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
 </body>
-
 </html>
