@@ -130,6 +130,7 @@
                                                             <th>Reina</th>
                                                             <th>Cuadros</th>
                                                             <th>Tratamiento</th>
+                                                            <th>Producción</th>
                                                            
                                                             
                                                             
@@ -168,6 +169,9 @@
                                                             </form></td>";
                                                             
                                                             echo "<td> <form action='./tratamiento/tratamiento.php' method='get'><input onclick='return confirmacion()' class='btn btn-warning' value='Tratamiento' type='submit'/>
+                                                            <input type='hidden' name='colmena_id' value=" .  $colmena_id . " />
+                                                            </form></td>";
+                                                            echo "<td> <form action='./produccion/produccion.php' method='get'><input class='btn btn-warning' value='Produccion' type='submit'/>
                                                             <input type='hidden' name='colmena_id' value=" .  $colmena_id . " />
                                                             </form></td>";
                                                                                                                
