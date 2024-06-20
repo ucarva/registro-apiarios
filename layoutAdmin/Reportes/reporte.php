@@ -6,7 +6,7 @@ if (isset($_GET['colmena_id'])) {
     $colmena_id = $_GET['colmena_id'];
 
     // Array con los nombres de las tablas a consultar
-    $tablas = ['equipamiento', 'colonias', 'cuadros', 'reina', 'tratamiento', 'alimentacion'];
+    $tablas = ['equipamiento', 'colonias', 'cuadros', 'reina', 'tratamiento', 'alimentacion','produccion'];
 
     // Obtener el año actual
     $current_year = date("Y");

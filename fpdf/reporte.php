@@ -81,7 +81,7 @@ if (isset($_GET['colmena_id'])) {
     }
 
     // Array con los nombres de las tablas a consultar
-    $tablas = ['equipamiento', 'colonias', 'cuadros', 'reina', 'tratamiento', 'alimentacion'];
+    $tablas = ['equipamiento', 'colonias', 'cuadros', 'reina', 'tratamiento', 'alimentacion','produccion'];
 
     // Recorrer cada tabla y ejecutar la consulta
     foreach ($tablas as $tabla) {

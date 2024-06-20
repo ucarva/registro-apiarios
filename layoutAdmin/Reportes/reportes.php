@@ -115,7 +115,7 @@
                                     <div class="card-header">
                                         <!--Formulario-->
                                         <h3 class="text-center font-weight-light my-4 ">
-                                            Registrar Apiario
+                                            Reporte de Colmena
                                         </h3>
                                     </div>
                                     <div class="card-body">

@@ -124,7 +124,7 @@
 
 
                                         <?php
-                                        include "conexiontratamiento.php";
+                                        include "conexionproduccion.php";
 
                                         // Verificar si colmena_id está presente en la URL
                                         if (isset($_GET['colmena_id'])) {
@@ -136,7 +136,7 @@
                                         ?>
 
 
-                                        <form action="tratamiento.php" method="post">
+                                        <form action="produccion.php" method="post">
                                             <div class="mb-3">
                                                 <h3 class="text-center font-weight-light my-4 ">
                                                     Registro Producción colmena
@@ -145,72 +145,67 @@
                                                     <input type="hidden" name="colmena_id" value="<?php echo $colmena_id; ?>">
                                                 </div>
                                                 <div class="col-12">
-                                                    <label for="inputState" class="form-label">Enfermedad:</label>
-                                                    <select id="inputState" name="enfermedad" class="form-select">
-                                                        <option selected>Varroa</option>
-                                                        <option selected>Nosemosis</option>
-                                                        <option selected>loque americana</option>
-                                                        <option selected>loque europea</option>
-                                                        <option selected>Ascosferosis</option>
-                                                        <option selected>Aspergilosis</option>
-                                                        <option selected>Virus de parálisis de abejas</option>
-                                                        <option selected>Polilla de la cera</option>
-                                                        <option selected>Escarabajo predador </option>
-                                                        <option selected>No hay nada</option>
+                                                    <label for="fecha_aplicacion" class="form-label">Fecha de producción:</label>
+                                                    <input type="date" class="form-control" id="fecha_aplicacion" name="fecha_produccion" value="2024-01-01" min="2020-01-01" max="2040-12-31">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Tipo Cosecha:</label>
+                                                    <select id="inputState" name="cosecha" class="form-select">
+                                                        <option selected>Miel</option>
+                                                        <option selected>Polen</option>
+                                                        <option selected>Propóleo</option>
+                                                        <option selected>Jalea</option>
+                                                        <option selected>Real</option>
+                                                        <option selected>Otro</option>
+                                                        
                                                     </select>
                                                 </div>
                                                 <div class="col-12">
-                                                    <label for="inputState" class="form-label">Aplicar medicina:</label>
-                                                    <select id="medicina" name="medicina" class="form-select">
-
-                                                        <option value="no">No</option>
-                                                        <option value="si">Si</option>
+                                                    <label for="inputState" class="form-label">Cantidad:</label>
+                                                    <select id="inputState" name="cantidad" class="form-select">
+                                                        <option selected>1</option>
+                                                        <option selected>2</option>
+                                                        <option selected>3</option>
+                                                        <option selected>4</option>
+                                                        <option selected>5</option>
+                                                        <option selected>6</option>
+                                                        <option selected>7</option>
+                                                        <option selected>8</option>
+                                                        <option selected>9</option>
+                                                        <option selected>10</option>
+                                                       
                                                     </select>
                                                 </div>
-                                                <!--Opciones al decir Si en medicina -->
-                                                <!-- Campo oculto para almacenar la respuesta del usuario -->
-                                                <input type="hidden" id="respuesta_medicina" name="respuesta_medicina" value="no">
-
-                                                <!--Opciones al decir Si en medicina -->
-                                                <div id="opciones_medicina" style="display: none;">
-                                                    <div class="col-12">
-                                                        <label for="inputState" class="form-label">Nombre Medicina:</label>
-                                                        <input type="text" name="nombre_medicina" class="form-control" id="inputNombreMedicina" placeholder="Nombre Medicina" />
-                                                    </div>
-                                                    <div class="row g-3">
-                                                        <div class="col-md-6">
-                                                            <label for="fecha_aplicacion" class="form-label">Fecha de aplicación:</label>
-                                                            <input type="date" class="form-control" id="fecha_aplicacion" name="fecha_aplicacion" value="2024-01-01" min="2020-01-01" max="2040-12-31">
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label for="fecha_dosis" class="form-label">Fecha siguiente dosis:</label>
-                                                            <input type="date" class="form-control" id="fecha_dosis" name="fecha_dosis" value="2024-01-01" min="2020-01-01" max="2040-12-31">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-12">
-                                                        <label for="inputState" class="form-label">Dosis:</label>
-                                                        <input type="text" name="dosis" class="form-control" id="inputDosis" placeholder="Dosis" />
-                                                    </div>
+                                                <div class="col-12">
+                                                    <label for="inputState" class="form-label">Cuadros:</label>
+                                                    <select id="inputState" name="cuadros" class="form-select">
+                                                        <option selected>1</option>
+                                                        <option selected>2</option>
+                                                        <option selected>3</option>
+                                                        <option selected>4</option>
+                                                        <option selected>5</option>
+                                                        <option selected>6</option>
+                                                        <option selected>7</option>
+                                                        <option selected>8</option>
+                                                        <option selected>9</option>
+                                                        <option selected>10</option>
+                                                        <option selected>11</option>
+                                                        <option selected>12</option>
+                                                        <option selected>13</option>
+                                                        <option selected>14</option>
+                                                        <option selected>15</option>
+                                                        <option selected>16</option>
+                                                        <option selected>17</option>
+                                                        <option selected>18</option>
+                                                        <option selected>19</option>
+                                                        <option selected>20</option>
+                                                    </select>
                                                 </div>
 
 
                                         </form>
 
-                                        <script>
-                                            document.getElementById('medicina').addEventListener('change', function() {
-                                                var seleccion = this.value;
-                                                var opcionesMedicina = document.getElementById('opciones_medicina');
-                                                var respuestaMedicina = document.getElementById('respuesta_medicina');
-                                                if (seleccion === 'si') {
-                                                    opcionesMedicina.style.display = 'block';
-                                                } else {
-                                                    opcionesMedicina.style.display = 'none';
-                                                }
-                                                // Actualizar el valor del campo oculto con la respuesta del usuario
-                                                respuestaMedicina.value = seleccion;
-                                            });
-                                        </script>
+                                      
 
 
                                         <div class="col-12">
