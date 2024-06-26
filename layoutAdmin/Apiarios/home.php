@@ -164,13 +164,7 @@
                         <input type="date" class="form-control" id="start" name="fecha_instal" value="2024-01-01" min="2020-01-01" max="2040-12-31">
                       </div>
 
-                      <!--  <div class="mb-4">
-                                        <div class="form-floating mb-3 mb-md-0">
-                                          <input class="form-control" id="inputPasswordConfirm" type="num"
-                                            placeholder="Edad Reina" />
-                                          <label for="">Edad Reina</label>
-                                        </div> 
-                                      </div> -->
+              <!--
                       <div class="mb-4">
                         <div class="form-floating mb-3 mb-md-0">
                           <h2>Ubicación en el Mapa</h2>
@@ -178,15 +172,54 @@
                             <iframe class="container w-20 " src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d67233.74432444666!2d-73.39777320584164!3d8.201766435372056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x8e677b971d6d1fd1%3A0xf3eeb5f83fb498c9!2sOca%C3%B1a%2C%20Norte%20de%20Santander!3m2!1d8.238693699999999!2d-73.3472901!5e0!3m2!1ses!2sco!4v1708614666410!5m2!1ses!2sco" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                           </div>
                         </div>
+                      </div> -->
+                      <!--codgo para latitud y longitud-->
+                      <div class="mb-4">
+                      
+                        <input type="text" id="latitude" name="latitude" placeholder="latitude" >
+                        
+                        <input type="text" id="longitude" name="longitude" placeholder="longitude" >
+
+
+                        <script>
+                          function getLocation() {
+                            if (navigator.geolocation) {
+                              navigator.geolocation.getCurrentPosition(showPosition);
+                            } else {
+                              alert("Tu navegador no soporta la geolocalización.");
+                            }
+                          }
+
+                          function showPosition(position) {
+                            var latitude = position.coords.latitude;
+                            var longitude = position.coords.longitude;
+
+                            // Actualizar campos en el formulario con los valores de latitud y longitud
+                            document.getElementById("latitude").value = latitude;
+                            document.getElementById("longitude").value = longitude;
+                          }
+                        </script>
+                        <input class="btn btn-warning" type="button" value="Obtener Ubicación Actual" onclick="getLocation()">
+
+
                       </div>
+                      <!-- Fin codgo para latitud y longitud-->
                       <div class="mt-4 mb-10">
                         <div class="d-grid ">
+                        <input class="btn btn-warning" type="submit" name="register" value="Enviar">
 
-                          <input class="btn btn-warning" type="submit" name="register" value="Enviar">
+                          
+
 
                           <!---   <a class="btn  btn-dark btn-block  " href="../Index.php">Enviar</a>-->
                         </div>
                       </div>
+
+
+
+
+
+
                     </form>
 
 

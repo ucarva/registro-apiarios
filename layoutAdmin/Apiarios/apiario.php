@@ -8,6 +8,8 @@
                 strlen ($_POST['finca']) >=1 &&
                 strlen ($_POST['granjero']) >=1 &&
                strlen ($_POST['telefono']) >=1 && 
+               strlen ($_POST['latitude']) >=1 &&
+               strlen ($_POST['longitude']) >=1 &&
                 strlen ($_POST['fecha_instal']) >=1 
                /* strlen ($_POST['ubicacion_map']) >=1 */
             
@@ -19,10 +21,12 @@
                 $granjero = trim($_POST['granjero']);
                $telefono= trim($_POST['telefono']);
                 $fecha_instal= trim($_POST['fecha_instal']);
+                $latitude= trim($_POST['latitude']);
+                $longitude= trim($_POST['longitude']);
               /*  $ubicacion_map = trim($_POST['ubicacion_map']);*/
                
-                $consulta = "INSERT INTO apiarios(nombre,municipio,finca,granjero,telefono,fecha_instal)
-                    VALUES('$nombre','$municipio','$finca','$granjero','$telefono','$fecha_instal')";
+                $consulta = "INSERT INTO apiarios(nombre,municipio,finca,granjero,telefono,fecha_instal,latitude,longitude)
+                    VALUES('$nombre','$municipio','$finca','$granjero','$telefono','$fecha_instal','$latitude','$longitude')";
                 $resultado = mysqli_query($conexion,$consulta);
                     if($resultado){
                         ?>
