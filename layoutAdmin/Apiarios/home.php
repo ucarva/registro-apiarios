@@ -25,7 +25,6 @@
   }
 </style>
 
-
 <body class="sb-nav-fixed">
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
@@ -43,9 +42,7 @@
           </ul>
         </li>
       </ul>
-
     </form>
-
   </nav>
 
   </form>
@@ -98,9 +95,6 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tablas
                         </a>-->
-
-
-
           </div>
         </div>
         <div class="sb-sidenav-footer">
@@ -164,7 +158,7 @@
                         <input type="date" class="form-control" id="start" name="fecha_instal" value="2024-01-01" min="2020-01-01" max="2040-12-31">
                       </div>
 
-              <!--
+                      <!--
                       <div class="mb-4">
                         <div class="form-floating mb-3 mb-md-0">
                           <h2>Ubicación en el Mapa</h2>
@@ -175,12 +169,11 @@
                       </div> -->
                       <!--codgo para latitud y longitud-->
                       <div class="mb-4">
-                      
-                        <input type="text" id="latitude" name="latitude" placeholder="latitude" >
-                        
-                        <input type="text" id="longitude" name="longitude" placeholder="longitude" >
 
+                        <input type="text" id="latitude" name="latitude" placeholder="latitude">
+                        <input type="text" id="longitude" name="longitude" placeholder="longitude">
 
+                            <!--Script para la geolocalización-->
                         <script>
                           function getLocation() {
                             if (navigator.geolocation) {
@@ -206,27 +199,12 @@
                       <!-- Fin codgo para latitud y longitud-->
                       <div class="mt-4 mb-10">
                         <div class="d-grid ">
-                        <input class="btn btn-warning" type="submit" name="register" value="Enviar">
-
-                          
-
-
+                          <input class="btn btn-warning" type="submit" name="register" value="Enviar">
                           <!---   <a class="btn  btn-dark btn-block  " href="../Index.php">Enviar</a>-->
                         </div>
                       </div>
-
-
-
-
-
-
                     </form>
-
-
-
-
                   </div>
-
                 </div>
               </div>
             </div>
