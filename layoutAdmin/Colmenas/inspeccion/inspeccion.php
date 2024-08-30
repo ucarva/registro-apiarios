@@ -36,7 +36,7 @@ if (!isset($_SESSION['nombre'])) {
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand -->
-    <a class="navbar-brand ps-3 d-none d-lg-block" href="index.php">Montaña Dorada</a>
+    <a class="navbar-brand ps-3 d-none d-lg-block" href="../index.php">Montaña Dorada</a>
 
     <!-- Sidebar Toggle (alineado a la izquierda) -->
     <div class="d-flex">

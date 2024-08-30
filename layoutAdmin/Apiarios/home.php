@@ -36,7 +36,7 @@ if (!isset($_SESSION['nombre'])) {
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand -->
-    <a class="navbar-brand ps-3 d-none d-lg-block" href="index.php">Montaña Dorada</a>
+    <a class="navbar-brand ps-3 d-none d-lg-block" href="../index.php">Montaña Dorada</a>
 
     <!-- Sidebar Toggle (alineado a la izquierda) -->
     <div class="d-flex">
@@ -52,7 +52,7 @@ if (!isset($_SESSION['nombre'])) {
                 <i class="fas fa-user fa-fw"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="../index.php">Cerrar sesión</a></li>
+                <li><a class="dropdown-item" href="../../index.php">Cerrar sesión</a></li>
             </ul>
         </li>
     </ul>

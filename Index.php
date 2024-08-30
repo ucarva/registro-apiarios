@@ -40,7 +40,7 @@
             <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 "></div>
             <div class="col bg-white p-5 rounded-end">
                 <div class="text-end">
-                    <img src="./img/logo.avif" width="90" />
+                    <img src="./img/logo.png" width="90" />
                 </div>
                 <h2 class="fw-bold text-center ">MONTAÑA DORADA</h2>
                 <h3  class="fw-normal text-center" >Bienvenidos</h3>
