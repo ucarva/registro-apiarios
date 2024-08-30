@@ -1,11 +1,3 @@
-<?php
-/*Codigo para verificación de acceso*/
-if (!isset($_SESSION['nombre'])) {
-    header("Location: ../index.php?error=Acceso no autorizado. Debe iniciar sesión.");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,29 +15,29 @@ if (!isset($_SESSION['nombre'])) {
 </head>
 
 <body class="sb-nav-fixed">
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <!-- Navbar Brand -->
-    <a class="navbar-brand ps-3 d-none d-lg-block" href="index.php">Montaña Dorada</a>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand -->
+        <a class="navbar-brand ps-3 d-none d-lg-block" href="index.php">Montaña Dorada</a>
 
-    <!-- Sidebar Toggle (alineado a la izquierda) -->
-    <div class="d-flex">
-        <button class="btn btn-link btn-sm me-4 me-lg-0" id="sidebarToggle" href="#!">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
+        <!-- Sidebar Toggle (alineado a la izquierda) -->
+        <div class="d-flex">
+            <button class="btn btn-link btn-sm me-4 me-lg-0" id="sidebarToggle" href="#!">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
 
-    <!-- Menú desplegable de usuario (alineado a la derecha) -->
-    <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user fa-fw"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="../index.php">Cerrar sesión</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
+        <!-- Menú desplegable de usuario (alineado a la derecha) -->
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="../index.php">Cerrar sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -85,8 +77,14 @@ if (!isset($_SESSION['nombre'])) {
                     <!--Codigo php consulta-->
                     <?php
                     include('../layoutAdmin/Colmenas/conexion.php');
+                    /*Codigo para verificación de acceso*/
+                    session_start();
+                    if (!isset($_SESSION['nombre'])) {
+                        header("Location: ../index.php?error=Acceso no autorizado. Debe iniciar sesión.");
+                        exit();
+                    }
 
-                   
+
                     // Obtener el número de apiarios
                     $sqlApiarios = "SELECT COUNT(*) AS count FROM apiarios";
                     $resultApiarios = $conn->query($sqlApiarios);

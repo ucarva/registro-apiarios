@@ -19,10 +19,10 @@ error_reporting(E_ALL);
     $contraseña = validate($_POST['contraseña']);
 
     if (empty($nombre)) {
-        header("Location: Index.php?error=El Usuario Es Requerido");
+        header("Location: index.php?error=El Usuario Es Requerido");
         exit();
     }elseif (empty($contraseña)) {
-        header("Location: Index.php?error=La clave Es Requerida");
+        header("Location: index.php?error=La clave Es Requerida");
         exit();
     }else{
 
