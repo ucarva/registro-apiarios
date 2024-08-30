@@ -1,3 +1,10 @@
+<?php
+/*Codigo para verificación de acceso*/
+if (!isset($_SESSION['nombre'])) {
+    header("Location: ../index.php?error=Acceso no autorizado. Debe iniciar sesión.");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -149,6 +156,7 @@
                                                     <?php
                                                     // Incluye el archivo de conexión
                                                     include 'conexion.php';
+                                                   
                                                     $apiario_id = $_GET['apiario_id'];
 
                                                     $sql = "SELECT apiarios.nombre, colmenas.id, colmenas.tipo  FROM colmenas,apiarios where apiarios.id=colmenas.apiario_id AND apiario_id=$apiario_id";

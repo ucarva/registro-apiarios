@@ -1,3 +1,11 @@
+<?php
+/*Codigo para verificación de acceso*/
+if (!isset($_SESSION['nombre'])) {
+    header("Location: ../index.php?error=Acceso no autorizado. Debe iniciar sesión.");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -78,7 +86,7 @@
                     <?php
                     include('../layoutAdmin/Colmenas/conexion.php');
 
-
+                   
                     // Obtener el número de apiarios
                     $sqlApiarios = "SELECT COUNT(*) AS count FROM apiarios";
                     $resultApiarios = $conn->query($sqlApiarios);

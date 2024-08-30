@@ -40,18 +40,18 @@ error_reporting(E_ALL);
                 header("Location:./layoutAdmin/index.php");
                 exit();
             }else {
-                header("Location: Index.php?error=El usuario o la clave son incorrectas");
+                header("Location: index.php?error=El usuario o la clave son incorrectas");
                 exit();
             }
 
         }else {
-            header("Location: Index.php?error=El usuario o la clave son incorrectas");
+            header("Location: index.php?error=El usuario o la clave son incorrectas");
             exit();
         }
     }
 
 } else {
-    header("Location: Index.php");
+    header("Location: index.php");
             exit();
 }
 
