@@ -1,7 +1,8 @@
 <?php
 /*Codigo para verificación de acceso*/
+session_start();
 if (!isset($_SESSION['nombre'])) {
-    header("Location: ../index.php?error=Acceso no autorizado. Debe iniciar sesión.");
+    header("Location: ../../index.php?error=Acceso no autorizado. Debe iniciar sesión.");
     exit();
 }
 ?>
