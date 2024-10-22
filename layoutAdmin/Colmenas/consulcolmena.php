@@ -1,5 +1,5 @@
 <?php
-/*Codigo para verificación de acceso*/
+/*Código para verificación de acceso*/
 session_start();
 if (!isset($_SESSION['nombre'])) {
     header("Location: ../index.php?error=Acceso no autorizado. Debe iniciar sesión.");
@@ -22,7 +22,7 @@ if (!isset($_SESSION['nombre'])) {
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
-<!-- Codigo Js para mensaje enviar -->
+<!-- Código JS para mensaje de confirmación -->
 <script>
     function confirmacion() {
         var respuesta = confirm("¿La información es correcta?");
@@ -34,31 +34,26 @@ if (!isset($_SESSION['nombre'])) {
     }
 </script>
 
-
 <body class="sb-nav-fixed">
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <!-- Navbar Brand -->
-    <a class="navbar-brand ps-3 d-none d-lg-block" href="../index.php">Montaña Dorada</a>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand ps-3 d-none d-lg-block" href="../index.php">Montaña Dorada</a>
+        <div class="d-flex">
+            <button class="btn btn-link btn-sm me-4 me-lg-0" id="sidebarToggle" href="#!">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="../../index.php">Cerrar sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
-    <!-- Sidebar Toggle (alineado a la izquierda) -->
-    <div class="d-flex">
-        <button class="btn btn-link btn-sm me-4 me-lg-0" id="sidebarToggle" href="#!">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-
-    <!-- Menú desplegable de usuario (alineado a la derecha) -->
-    <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user fa-fw"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="../../index.php">Cerrar sesión</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -77,37 +72,9 @@ if (!isset($_SESSION['nombre'])) {
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link" href="../Apiarios/home.php">Registrar Apiario</a>
                                 <a class="nav-link" href="../Colmenas/home.php">Actividades Colmena</a>
-                                <a class="nav-link" href="../Reportes/home.php">Reportes</a> 
+                                <a class="nav-link" href="../Reportes/home.php">Reportes</a>
                             </nav>
                         </div>
-                        <!--Administración-->
-
-                        <!--
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePagesadmin" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            Administracion
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePagesadmin" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link" href="./registrousuario.html">Crear usuarios</a>
-                                <a class="nav-link" href="#">Eliminar Apiarios</a>
-                                <a class="nav-link" href="#">Eliminar Colmena</a>
-                                <a class="nav-link" href="#">Eliminar Usuario</a>
-                            </nav>
-                        </div>
-                        <div class="sb-sidenav-menu-heading">Addons</div>
-                        <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Graficos
-                        </a>
-                        <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tablas
-                        </a>
--->
-
-
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -117,68 +84,63 @@ if (!isset($_SESSION['nombre'])) {
             </nav>
         </div>
         <div id="layoutSidenav_content">
-        <main>
+            <main>
                 <div class="container-fluid px-4">
                     <div class="container">
                         <div class="row justify-content-center">
-                          <div class="col-lg-7">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                              <div class="card-header">
-            
-                                <!--Formulario-->
-            
-            
-                                <h3 class="text-center font-weight-light my-4 ">
-                                  Registrar Apiario
-                                </h3>
-            
-                               
-                             
-                              </div>
-                              
-                              
-                                
-                              <div class="card-body">
-
-
-                              <div class="table-responsive ">
-                              <table id="tablaapiarios" class="table table-bordered table-hover">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header">
+                                        <h3 class="text-center font-weight-light my-4">Registrar Apiario</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="tablaapiarios" class="table table-bordered table-hover">
                                                 <thead class="text-center">
                                                     <tr>
                                                         <th>Nombre apiario</th>
                                                         <th>Colmena</th>
+                                                        <th>QR</th>
                                                         <th>Inspección</th>
-                                                        
-                                                        
                                                     </tr>
+
                                                 </thead>
                                                 <tbody>
-                                                    <!-- Codigo de consulta registros bdd-->
+                                                    <!-- Código de consulta registros BDD -->
                                                     <?php
-                                                    // Incluye el archivo de conexión
                                                     include 'conexion.php';
-                                                   
+
                                                     $apiario_id = $_GET['apiario_id'];
-
-                                                    $sql = "SELECT apiarios.nombre, colmenas.id, colmenas.tipo  FROM colmenas,apiarios where apiarios.id=colmenas.apiario_id AND apiario_id=$apiario_id";
+                                                    $sql = "SELECT apiarios.nombre, colmenas.id, colmenas.tipo, colmenas.qr FROM colmenas, apiarios WHERE apiarios.id=colmenas.apiario_id AND apiario_id=$apiario_id";
                                                     $result = $conn->query($sql);
-
 
                                                     if ($result->num_rows > 0) {
                                                         // Muestra los datos de cada fila
                                                         while ($row = $result->fetch_assoc()) {
                                                             echo "<tr>";
-
                                                             echo "<td class='text-center'>" . $row["nombre"] . "</td>";
                                                             echo "<td class='text-center'>" . $row["tipo"] . "</td>";
-                                                           
 
-                                                         
+                                                            // Incluye la biblioteca para generar el código de barras
+                                                            require_once './barcode-master/barcode.php';
 
-                                                            echo "<td> <form action='./inspeccion/inspeccion.php' method='get'><div class='d-grid gap-2 col-6  mx-auto'><button  type='submit' class='btn btn-warning'>Inspeccion</button></td></div>
-                                                                                <input type='hidden' name='colmena_id' value=" . $row["id"] . " />
-                                                                                </form></td>";
+                                                            $generator = new barcode_generator();
 
+                                                            // Genera el código QR en formato SVG y lo imprime directamente
+                                                            $svg = $generator->render_svg("qr",  $row["qr"], "");
+                                                            echo "<td class='text-center'>" . $svg . "<br>";
+
+                                                            // Agrega el enlace de descarga debajo del código QR
+                                                            echo "<a href='descargar_qr.php?qr_data=" . urlencode($row["qr"]) . "'>Descargar QR</a></td>";
+
+                                                            echo "<td> 
+                                                                <form action='./inspeccion/inspeccion.php' method='get'>
+                                                                    <div class='d-grid gap-2 col-6 mx-auto'>
+                                                                        <button type='submit' class='btn btn-warning'>Inspección</button>
+                                                                    </div>
+                                                                    <input type='hidden' name='colmena_id' value=" . $row["id"] . " />
+                                                                </form>
+                                                            </td>";
                                                             echo "</tr>";
                                                         }
                                                     } else {
@@ -187,26 +149,18 @@ if (!isset($_SESSION['nombre'])) {
                                                     // Cierra la conexión
                                                     $conn->close();
                                                     ?>
+                                                </tbody>
 
-                                                </tbody >
-                                                
+
+
 
                                             </table>
-
-                              </div>
-                                           
                                         </div>
-                                        <!-- /.card-body -->
                                     </div>
-            
-            
-                              </div>
-            
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
-                </div>            
+                    </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
@@ -230,6 +184,5 @@ if (!isset($_SESSION['nombre'])) {
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
 </body>
-
 
 </html>

@@ -39,10 +39,13 @@
         <div class="row align-items-stretch shadow-lg p-3 mb-5 bg-body rounded">
             <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 "></div>
             <div class="col bg-white p-5 rounded-end">
-                <div class="text-end">
-                    <img src="./img/logo.png" width="90" />
-                </div>
-                <h2 class="fw-bold text-center ">MONTAÑA DORADA</h2>
+            <div class="row">
+                        <div class="col-12 text-center text-md-end">
+                            <img src="./img/logo.png" width="90" />
+                        </div>
+                    </div>
+                    <h2 class="fw-bold text-center d-none d-md-block">MONTAÑA DORADA</h2>
+
                 <h3  class="fw-normal text-center" >Bienvenidos</h3>
 
                 <!--Mensaje error -->
