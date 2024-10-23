@@ -12,6 +12,10 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="././css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Carga de la biblioteca html5-qrcode -->
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+
 </head>
 
 <body class="sb-nav-fixed">
@@ -120,6 +124,59 @@
                                 </div>
                             </div>
                         </div>
+                       
+                        <button id="startButton" class="btn btn-primary mb-3" >Escanear Código QR</button>
+                        <br><br>
+                        <!-- Área donde se mostrará el video de la cámara -->
+                        <video id="video" width="300" height="300" autoplay style="display:none;"></video>
+                        <br>
+                        <!-- Botón para detener la cámara -->
+                        <button id="stopButton" style="display:none;">Detener Cámara</button>
+
+                        <script>
+                            const video = document.getElementById('video');
+                            const startButton = document.getElementById('startButton');
+                            const stopButton = document.getElementById('stopButton');
+                            let stream;
+
+                            // Función para abrir la cámara al hacer clic en el botón
+                            startButton.addEventListener('click', () => {
+                                if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                                    navigator.mediaDevices.getUserMedia({
+                                            video: {
+                                                facingMode: {
+                                                    ideal: "environment"
+                                                }
+                                            } // environment para la cámara trasera
+                                        })
+                                        .then(function(mediaStream) {
+                                            stream = mediaStream;
+                                            video.srcObject = mediaStream;
+                                            video.style.display = "block"; // Mostramos el video
+                                            startButton.style.display = "none"; // Ocultamos el botón de inicio
+                                            stopButton.style.display = "inline"; // Mostramos el botón para detener la cámara
+                                        })
+                                        .catch(function(error) {
+                                            console.error("Error al acceder a la cámara: ", error);
+                                            alert("No se puede acceder a la cámara. Asegúrate de usar HTTPS.");
+                                        });
+                                } else {
+                                    alert("Tu navegador no soporta la API de medios para acceder a la cámara.");
+                                }
+                            });
+
+                            // Función para detener la cámara al hacer clic en el botón
+                            stopButton.addEventListener('click', () => {
+                                const tracks = stream.getTracks();
+
+                                tracks.forEach(track => track.stop()); // Detenemos todos los tracks (video)
+                                video.style.display = "none"; // Ocultamos el video
+                                stopButton.style.display = "none"; // Ocultamos el botón de detener
+                                startButton.style.display = "inline"; // Mostramos el botón de inicio de nuevo
+                            });
+                        </script>
+
+
                     </div>
                 </div>
             </main>

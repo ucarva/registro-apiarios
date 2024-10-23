@@ -115,7 +115,7 @@ if (!isset($_SESSION['nombre'])) {
                                                     $result = $conn->query($sql);
 
                                                     if ($result->num_rows > 0) {
-                                                        // Muestra los datos de cada fila
+                                                        
                                                         while ($row = $result->fetch_assoc()) {
                                                             echo "<tr>";
                                                             echo "<td class='text-center'>" . $row["nombre"] . "</td>";
@@ -126,21 +126,24 @@ if (!isset($_SESSION['nombre'])) {
 
                                                             $generator = new barcode_generator();
 
-                                                            // Genera el código QR en formato SVG y lo imprime directamente
-                                                            $svg = $generator->render_svg("qr",  $row["qr"], "");
+                                                            // Genera una URL que apunte al formulario de inspección
+                                                            $url = "http://localhost/RegistroApiarios/layoutAdmin/Colmenas/inspeccion/inspeccion.php?colmena_id=" . urlencode($row["id"]);
+
+                                                            // Genera el código QR con la URL del formulario de inspección
+                                                            $svg = $generator->render_svg("qr", $url, "");
                                                             echo "<td class='text-center'>" . $svg . "<br>";
 
                                                             // Agrega el enlace de descarga debajo del código QR
-                                                            echo "<a href='descargar_qr.php?qr_data=" . urlencode($row["qr"]) . "'>Descargar QR</a></td>";
+                                                            echo "<a href='descargar_qr.php?qr_data=" . urlencode($url) . "'>Descargar QR</a></td>";
 
                                                             echo "<td> 
-                                                                <form action='./inspeccion/inspeccion.php' method='get'>
-                                                                    <div class='d-grid gap-2 col-6 mx-auto'>
-                                                                        <button type='submit' class='btn btn-warning'>Inspección</button>
-                                                                    </div>
-                                                                    <input type='hidden' name='colmena_id' value=" . $row["id"] . " />
-                                                                </form>
-                                                            </td>";
+                                                            <form action='./inspeccion/inspeccion.php' method='get'>
+                                                                <div class='d-grid gap-2 col-6 mx-auto'>
+                                                                    <button type='submit' class='btn btn-warning'>Inspección</button>
+                                                                </div>
+                                                                <input type='hidden' name='colmena_id' value=" . $row["id"] . " />
+                                                            </form>
+                                                        </td>";
                                                             echo "</tr>";
                                                         }
                                                     } else {
