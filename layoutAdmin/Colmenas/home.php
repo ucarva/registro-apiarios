@@ -199,15 +199,15 @@ if (!isset($_SESSION['nombre'])) {
                                                                 <label for="inputState" class="form-label">Tipo de colmena:</label>
                                                                 <select id="inputState" name="tipo" class="form-select">
                                                                     <option selected>Colmena Vertical</option>
-                                                                    <option selected>Camara de cría</option>
-                                                                    <option selected>Núcleo</option>
+                                                                    <option selected>Camara de cria</option>
+                                                                    <option selected>Nucleo</option>
                                                                     <option selected>Otra</option>
 
                                                                 </select>
                                                             </div>
 
                                                             <div class="mb-4">
-                                                                <label for="fecha_aplicacion" class="form-label">Fecha Instalaciòn </label>
+                                                                <label for="fecha_aplicacion" class="form-label">Fecha Instalacion </label>
                                                                 <input type="date" class="form-control" id="start" name="fecha_instal" value="2024-01-01" min="2020-01-01" max="2040-12-31">
                                                             </div>
 

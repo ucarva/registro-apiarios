@@ -1,3 +1,12 @@
+<?php
+ /*Codigo para verificación de acceso*/
+                    session_start();
+                    if (!isset($_SESSION['nombre'])) {
+                        header("Location: ../index.php?error=Acceso no autorizado. Debe iniciar sesión.");
+                        exit();
+                    }
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,6 +21,8 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="././css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+
 
     <!-- Carga de la biblioteca html5-qrcode -->
     <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
@@ -81,12 +92,7 @@
                     <!--Codigo php consulta-->
                     <?php
                     include('../layoutAdmin/Colmenas/conexion.php');
-                    /*Codigo para verificación de acceso*/
-                    session_start();
-                    if (!isset($_SESSION['nombre'])) {
-                        header("Location: ../index.php?error=Acceso no autorizado. Debe iniciar sesión.");
-                        exit();
-                    }
+                   
 
 
                     // Obtener el número de apiarios
@@ -124,22 +130,27 @@
                                 </div>
                             </div>
                         </div>
-                       
-                        <button id="startButton" class="btn btn-primary mb-3" >Escanear Código QR</button>
+
+                        <button id="startButton" class="btn btn-primary mb-3">Escanear Código QR</button>
                         <br><br>
                         <!-- Área donde se mostrará el video de la cámara -->
                         <video id="video" width="300" height="300" autoplay style="display:none;"></video>
+                        <canvas id="canvas" width="300" height="300" style="display:none;"></canvas>
                         <br>
                         <!-- Botón para detener la cámara -->
                         <button id="stopButton" style="display:none;">Detener Cámara</button>
+                        <p id="outputData"></p>
 
                         <script>
                             const video = document.getElementById('video');
+                            const canvasElement = document.getElementById('canvas');
+                            const canvas = canvasElement.getContext('2d');
                             const startButton = document.getElementById('startButton');
                             const stopButton = document.getElementById('stopButton');
+                            const outputData = document.getElementById('outputData');
                             let stream;
 
-                            // Función para abrir la cámara al hacer clic en el botón
+                            // Función para abrir la cámara
                             startButton.addEventListener('click', () => {
                                 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                                     navigator.mediaDevices.getUserMedia({
@@ -147,14 +158,15 @@
                                                 facingMode: {
                                                     ideal: "environment"
                                                 }
-                                            } // environment para la cámara trasera
+                                            }
                                         })
                                         .then(function(mediaStream) {
                                             stream = mediaStream;
                                             video.srcObject = mediaStream;
-                                            video.style.display = "block"; // Mostramos el video
-                                            startButton.style.display = "none"; // Ocultamos el botón de inicio
-                                            stopButton.style.display = "inline"; // Mostramos el botón para detener la cámara
+                                            video.style.display = "block";
+                                            startButton.style.display = "none";
+                                            stopButton.style.display = "inline";
+                                            scanQRCode(); // Iniciar el escaneo del QR
                                         })
                                         .catch(function(error) {
                                             console.error("Error al acceder a la cámara: ", error);
@@ -165,17 +177,53 @@
                                 }
                             });
 
-                            // Función para detener la cámara al hacer clic en el botón
+                            // Función para detener la cámara
                             stopButton.addEventListener('click', () => {
                                 const tracks = stream.getTracks();
-
-                                tracks.forEach(track => track.stop()); // Detenemos todos los tracks (video)
-                                video.style.display = "none"; // Ocultamos el video
-                                stopButton.style.display = "none"; // Ocultamos el botón de detener
-                                startButton.style.display = "inline"; // Mostramos el botón de inicio de nuevo
+                                tracks.forEach(track => track.stop());
+                                video.style.display = "none";
+                                stopButton.style.display = "none";
+                                startButton.style.display = "inline";
                             });
-                        </script>
 
+                            // Función para escanear el QR
+                            function scanQRCode() {
+                                canvasElement.style.display = "none";
+                                video.play();
+
+                                const scan = () => {
+                                    if (video.readyState === video.HAVE_ENOUGH_DATA) {
+                                        canvasElement.width = video.videoWidth;
+                                        canvasElement.height = video.videoHeight;
+                                        canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+
+                                        const imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+                                        const qrCode = jsQR(imageData.data, canvasElement.width, canvasElement.height, {
+                                            inversionAttempts: "dontInvert",
+                                        });
+
+                                        if (qrCode) {
+                                            const qrData = qrCode.data;
+
+                                            // Verifica si el contenido del QR es un enlace válido
+                                            if (qrData.startsWith("http://") || qrData.startsWith("https://")) {
+                                                // Redirige automáticamente al enlace detectado
+                                                window.location.href = qrData;
+                                            } else {
+                                                // Muestra el contenido del QR si no es un enlace
+                                                outputData.innerText = `Contenido del QR: ${qrData}`;
+                                            }
+
+                                            stopButton.click(); // Detener cámara al escanear el QR
+                                        }
+                                    }
+
+                                    requestAnimationFrame(scan); // Repetir el proceso de escaneo
+                                };
+
+                                scan();
+                            }
+                        </script>
 
                     </div>
                 </div>
@@ -194,6 +242,7 @@
             </footer>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
 </body>
